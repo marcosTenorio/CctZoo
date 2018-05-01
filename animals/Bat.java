@@ -20,11 +20,11 @@ import types.Mammal;
  */
 public class Bat extends Animal implements Mammal, Avian{
 
-    
-   
 
-   
-    
+
+  private String test;
+
+
     @Override
     public void breastFeed() {
         System.out.println("feed");
@@ -34,5 +34,5 @@ public class Bat extends Animal implements Mammal, Avian{
     public void fly() {
         System.out.println("fly");
     }
-    
+
 }
