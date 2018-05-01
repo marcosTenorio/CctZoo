@@ -19,12 +19,7 @@ import types.Mammal;
  * @author marcos
  */
 public class Bat extends Animal implements Mammal, Avian{
-
-
-
-  private String test;
-
-
+  
     @Override
     public void breastFeed() {
         System.out.println("feed");
