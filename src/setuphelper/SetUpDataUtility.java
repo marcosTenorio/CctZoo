@@ -24,12 +24,10 @@ public class SetUpDataUtility {
     
     Random r = new Random();
     
-    
     public void getItReady(){
         createData();
         fillKeepers();
     }
-    
     
     public void createData(){
         
@@ -42,11 +40,16 @@ public class SetUpDataUtility {
     }
     
     public void fillKeepers(){
-        for(Keeper k : currentKeeper){
-            k.setName(sDU.keeperNames[r.nextInt(sDU.keeperNames.length)]);
+        currentKeeper.stream().map((k) -> {
+            String keeperName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
+            keeperName += sDU.keeperSurname[r.nextInt(sDU.keeperSurname.length)];
+            k.setName(keeperName);
+            return k;
+        }).forEachOrdered((k) -> {
             k.setDob(sDU.keeperDob[r.nextInt(sDU.keeperDob.length)]);
-        }
+        });
     }
+    
     
     
 }

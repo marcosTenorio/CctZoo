@@ -9,17 +9,25 @@ public class StoredDataUtility {
     
     
     
-    public String[] keeperNames = new String[]{"Grady Millhouse","Maida Miracle","Stewart Melia",
-                                               "Francis Trippe","Jessy Pinkman","Wilber Martindale","Isis Tien","Mirna Zalenski",
-                                               "Rita Mckillop","Maritza Stalzer","Iesha Whittaker","Daysi Marble","Ken Miedema",
-                                               "Shenita Dalley","Mickie Dulin","Gayle Kurland","Jacob Rayes","Darla Scroggins",
-                                               "Aide Lau","Barrett Cazarez","Georgeann Giffen","Lucrecia Roussel","Arleen Witzel",
-                                               "Meredith Bonacci","Rick Sanchez","Dyan Behar","Heike Blackmer","Mallie Greenwood",
-                                               "Lily Gregg","Carlena Murguia","Jenee Chae","Dewitt Muma","Joi Frink","Morty Sanchez",
-                                               "Vannessa Valderas","Yetta Benefiel","Jewell Rapier","Jess Emling","Dave Oberman",
-                                               "Luetta Millis","Bok Circle","Vicki Reaux","Lane Morehouse","Cecille Bixler",
-                                               "Walter White","Dolores Mingez","Agripina Haveman","Cherryl Gale",
-                                               "Gilberte Gillum","Elliot Anderson","BatMan"};
+    public String[] keeperFirstName = new String[]{"Grady","Maida","Stewart",
+                                               "Francis","Jessy","Wilber","Isis","Mirna",
+                                               "Rita","Maritza","Iesha","Daysi","Ken",
+                                               "Shenita","Mickie","Gayle","Jacob","Darla",
+                                               "Aide","Barrett","Georgeann","Lucrecia","Arleen",
+                                               "Meredith","Rick","Dyan","Heike","Mallie",
+                                               "Lily","Carlena","Jenee","Dewitt","Joi","Morty",
+                                               "Vannessa","Yetta","Jewell","Jess","Dave",
+                                               "Luetta","Bok","Vicki","Lane","Cecille",
+                                               "Walter","Dolores","Agripina","Cherryl",
+                                               "Gilberte","Elliot","BatMan"};
+    
+    public String[] keeperSurname = new String[]{" Millhouse"," Miracle"," Melia"," Trippe"," Pinkman"," Martindale",
+                                                 " Tien"," Dalley"," Stalzer"," Whittaker"," Marble"," Miedema",
+                                                 " Dalley"," Dulin"," Kurland"," Rayes"," Scroggins"," Lau",
+                                                 " Cazarez"," Giffen"," Roussel"," Witzel"," Bonacci"," Murguia",
+                                                 " Chae"," Muma"," Frink"," Sanchez"," Valderas"," Benefiel",
+                                                 " Rapier"," Emling"," Oberman"," Millis"," Circle"," Reaux",
+                                                 " Morehouse"," Bixler"," White"," Mingez"," Haveman"," Gale"," Gillum"," Anderson", " Spencer"};
     
     
     public String[] keeperDob = new String[]{"20/06/1970","23/12/1972","22/01/1974","03/11/1975","29/01/1977","18/10/1977","20/02/1979",
