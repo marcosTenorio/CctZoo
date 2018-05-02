@@ -143,4 +143,9 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public String toString(){
         return "";
     }
+    
+    @Override
+    public void swim(){
+        
+    }
 }

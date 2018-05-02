@@ -10,5 +10,5 @@ package animals.interfaces;
  * @author marcos
  */
 public interface IAquatic{
-    
+    public void swim();
 }
