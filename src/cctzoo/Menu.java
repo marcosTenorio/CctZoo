@@ -3,6 +3,7 @@ package cctzoo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import keeper.Keeper;
+import keeper.updateKeeper;
 import setuphelper.Printing;
 import setuphelper.SetUpDataUtility;
 
@@ -13,6 +14,9 @@ import setuphelper.SetUpDataUtility;
 public class Menu {
     
     Printing printOut = new Printing();
+    
+    updateKeeper uptKeeper = new updateKeeper();
+    
     Scanner selection = new Scanner(System.in);
     
       
@@ -38,21 +42,22 @@ public class Menu {
                         
                         break;
                     case 2:
-                        printOut.displayKeepers(setData);
-                        System.out.println();
-                        Options(setData);
+                        
                         break;
                     case 3:
                         
                         break;
                     case 4:
-                        
+                        uptKeeper.addKeeper(setData, printOut);
+                        System.out.println();
+                        Options(setData);
                         break;
                     case 5:
                         
                         break;
                     case 6:
-                        
+                        printOut.displayKeepers(setData);
+                        Options(setData);
                         break;
                     case 7:
                         System.out.println("Thanks for visiting....... bye");
@@ -68,7 +73,6 @@ public class Menu {
                 System.out.println("Please, try again");
                 selection.next();
                 Options(setData);
-            }
+            }    
     }
-    
 }

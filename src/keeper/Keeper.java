@@ -32,9 +32,4 @@ public class Keeper extends Person{
         this.dob = dob;
     }
     
-    
-    
-    
-    
-    
 }
