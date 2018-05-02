@@ -11,7 +11,9 @@ import animals.interfaces.IAvian;
 import animals.interfaces.IInsect;
 import animals.interfaces.IMammal;
 import animals.interfaces.IReptile;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import keeper.Keeper;
 /**
  *
@@ -115,6 +117,16 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
 
     public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
+    }
+    
+    public String getType(){
+        
+        String type = this.getClass().getName();
+        
+        if(type.contains(".")){
+            type = type.split("\\.")[1];
+        }
+        return type;
     }
     
     @Override

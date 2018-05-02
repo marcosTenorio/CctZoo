@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import keeper.Keeper;
 import animals.Animal;
+import animals.Aquatic;
+import animals.Avian;
+import animals.Insect;
+import animals.Mammal;
+import animals.Reptile;
 
 /**
  *
@@ -14,7 +19,6 @@ public class SetUpDataUtility {
     
     int amtOfKeepers = 40; //amount of Keepers
     int amtOfAnimals = 100; //amount of Animals
-    
     
     public StoredDataUtility sDU = new StoredDataUtility();
     
@@ -34,9 +38,28 @@ public class SetUpDataUtility {
        for(int i = 0; i < amtOfKeepers; i++){
            currentKeeper.add(new Keeper());
        }
+       
        for(int i = 0; i < amtOfAnimals; i++){
-           currentAnimal.add(new Bat());
+           int randomAnimalNumber = (r.nextInt(5) + 1);
+           currentAnimal.add(creeateRandomAnimal(randomAnimalNumber));
        }
+    }
+    
+    private Animal creeateRandomAnimal(int num){
+        switch(num){
+               case 1:
+                   return new Aquatic();
+               case 2:
+                   return new Avian();
+               case 3:
+                   return new Insect();
+               case 4:
+                   return new Mammal();
+               case 5:
+                   return new Reptile();
+               default:
+                   return null;
+           }
     }
     
     public void fillKeepers(){
