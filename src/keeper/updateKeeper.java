@@ -104,11 +104,13 @@ public class updateKeeper {
         String s = sc.next();
         String n = "";
         String dob = "";
+        int id;
         for(int i = 0; i < setData.currentKeeper.size(); i++){ //not working
             Keeper k = setData.currentKeeper.get(i);
             if(k.getDob().equals(f + " "+ s)){
                 n = k.getName();
                 dob = k.getDob();
+                id = (i+1);
             }
         }
         if(n.equals("") && dob.equals("")){
@@ -124,6 +126,7 @@ public class updateKeeper {
         }else{
             System.out.println("");
             System.out.println("---Results found----");
+            System.out.println("Keeper nº ");
             System.out.println("Name: " + n);
             System.out.println("Date of birth: " + dob);
             System.out.println();
@@ -137,11 +140,13 @@ public class updateKeeper {
         String x = sc.next();
         String n = "";
         String dob = "";
+        int id = 0;
         for(int i = 0; i < setData.currentKeeper.size(); i++){ //what if more than one result?
             Keeper k = setData.currentKeeper.get(i);
             if(k.getDob().equals(x)){
                 n = k.getName();
                 dob = k.getDob();
+                id = (i+1);
             }
         }
         if(n.equals("") && dob.equals("")){
@@ -157,6 +162,7 @@ public class updateKeeper {
         }else{
             System.out.println("");
             System.out.println("---Results found----");
+            System.out.println("Keeper nº "+ id);
             System.out.println("Name: " + n);
             System.out.println("Date of birth: " + dob);
             System.out.println();
@@ -164,7 +170,4 @@ public class updateKeeper {
             System.out.println();
         }
     }
-        
-    
-    
 }
