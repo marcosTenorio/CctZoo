@@ -7,8 +7,9 @@ package animals.interfaces;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public interface IAquatic{
-    
+    public void swim();
 }

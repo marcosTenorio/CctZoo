@@ -7,9 +7,9 @@ package animals.interfaces;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public interface IAvian{
-    
     public void fly();
 }
