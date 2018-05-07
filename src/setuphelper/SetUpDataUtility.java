@@ -11,11 +11,14 @@ import animals.Insect;
 import animals.Mammal;
 import animals.Reptile;
 
+
 /**
  *
  * @author marcos
  */
 public class SetUpDataUtility {
+    
+    
     
     int amtOfKeepers = 40; //amount of Keepers
     int amtOfAnimals = 100; //amount of Animals
@@ -27,6 +30,7 @@ public class SetUpDataUtility {
     public ArrayList<Animal>   currentAnimal  = new ArrayList();
     
     Random r = new Random();
+    
     
     public void getItReady(){
         createData();
@@ -41,11 +45,13 @@ public class SetUpDataUtility {
        
        for(int i = 0; i < amtOfAnimals; i++){
            int randomAnimalNumber = (r.nextInt(5) + 1);
-           currentAnimal.add(creeateRandomAnimal(randomAnimalNumber));
+           currentAnimal.add(createRandomAnimal(randomAnimalNumber));
        }
     }
     
-    private Animal creeateRandomAnimal(int num){
+    
+    
+    private Animal createRandomAnimal(int num){
         switch(num){
                case 1:
                    return new Aquatic();
@@ -71,8 +77,8 @@ public class SetUpDataUtility {
         }).forEachOrdered((k) -> {
             k.setDob(sDU.keeperDob[r.nextInt(sDU.keeperDob.length)]);
         });
-    }
-    
+    }  
+ 
     
     
 }

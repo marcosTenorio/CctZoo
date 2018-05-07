@@ -3,6 +3,7 @@ package cctzoo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import keeper.Keeper;
+import keeper.updateKeeper;
 import setuphelper.Printing;
 import setuphelper.SetUpDataUtility;
 
@@ -13,14 +14,18 @@ import setuphelper.SetUpDataUtility;
 public class Menu {
     
     Printing printOut = new Printing();
+    
+    updateKeeper uptKeeper = new updateKeeper();
+    
     Scanner selection = new Scanner(System.in);
     
       
     public void Options(SetUpDataUtility setData){
 
-        
+       
+                
             System.out.println("MENU");
-            System.out.println("");
+            System.out.println();
             System.out.println("[1] Search for Animal");
             System.out.println("[2] Search for Keeper");
             System.out.println("[3] Add new Animal");
@@ -28,7 +33,7 @@ public class Menu {
             System.out.println("[5] Update Animal");
             System.out.println("[6] Update Keeper");
             System.out.println("[7] Exit");
-            System.out.println("");
+            System.out.println();
             System.out.print("Please make your choice from the options above: ");
             int option = selection.nextInt();
             
@@ -38,7 +43,7 @@ public class Menu {
                         
                         break;
                     case 2:
-                        printOut.displayKeepers(setData);
+                        uptKeeper.searchKeeper(setData, printOut);
                         System.out.println();
                         Options(setData);
                         break;
@@ -46,13 +51,17 @@ public class Menu {
                         
                         break;
                     case 4:
-                        
+                        uptKeeper.addKeeper(setData, printOut);
+                        System.out.println();
+                        Options(setData);
                         break;
                     case 5:
                         
                         break;
                     case 6:
-                        
+                        printOut.displayKeepers(setData);
+                        uptKeeper.updateKeeper(setData, printOut);
+                        Options(setData);
                         break;
                     case 7:
                         System.out.println("Thanks for visiting....... bye");
@@ -68,7 +77,6 @@ public class Menu {
                 System.out.println("Please, try again");
                 selection.next();
                 Options(setData);
-            }
+            }    
     }
-    
 }
