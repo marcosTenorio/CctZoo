@@ -21,6 +21,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public static int lastanimalId = 0;
 
     private String name;
+    private String petName;
     private String dob;
     private String doa;
     private char gender;
@@ -174,6 +175,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         return "";
     }
 
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
+    }
+    
     @Override
     public String toString() {
         String output;

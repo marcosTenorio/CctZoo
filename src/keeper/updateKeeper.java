@@ -1,19 +1,19 @@
 package keeper;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import setuphelper.Printing;
 import setuphelper.SetUpDataUtility;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class updateKeeper {
-    
+
     Scanner sc = new Scanner(System.in);
-    
-    public void addKeeper(SetUpDataUtility setData,Printing printOut){
+
+    public void addKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Adding new Keeper------");
         System.out.print("First name: ");
@@ -28,22 +28,22 @@ public class updateKeeper {
         setData.listOfKeepers.add(k);
         System.out.print("Would you like to add other keeper? (y/n)");
         String u = sc.next();
-        if(u.equals("y")){
+        if (u.equals("y")) {
             addKeeper(setData, printOut);
         }
     }
-    
-    public void updateKeeper(SetUpDataUtility setData,Printing printOut){
+
+    public void updateKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Updating Keeper----");
         System.out.print("Please insert the keeper id you would like to update: ");
         int id = sc.nextInt();
-        if(id > setData.listOfKeepers.size()){
+        if (id > setData.listOfKeepers.size()) {
             System.out.println();
             System.out.println("please, try again");
             updateKeeper(setData, printOut);
-        }else{
-            Keeper k = setData.listOfKeepers.get(id-1);
+        } else {
+            Keeper k = setData.listOfKeepers.get(id - 1);
             System.out.print("new first name: ");
             String fname = sc.next();
             System.out.print("new surname: ");
@@ -55,28 +55,27 @@ public class updateKeeper {
             System.out.println("Keeper updated!");
             System.out.print("display keepers?(y/n): ");
             String i = sc.next();
-            if(i.equals("y")){
+            if (i.equals("y")) {
                 printOut.displayKeepers(setData);
-            }else{
+            } else {
                 System.out.println();
             }
-        }  
+        }
     }
-    
-    public void searchKeeper(SetUpDataUtility setData,Printing printOut){
+
+    public void searchKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Select keeper's id, from the list above, to see more info: ");
         int id = sc.nextInt();
-        Keeper k = setData.listOfKeepers.get(id-1);
+        Keeper k = setData.listOfKeepers.get(id - 1);
         System.out.println(k.toString());
         System.out.print("Would you like to keep searching? (y/n)");
         String a = sc.next();
-        if(a.equals("y")){
+        if (a.equals("y")) {
             printOut.displayKeepers(setData);
             searchKeeper(setData, printOut);
         }
-   
+
     }
-    
-    
+
 }

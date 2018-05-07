@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package keeper;
-
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public abstract class Person {
     protected String firstName;

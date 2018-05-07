@@ -1,11 +1,9 @@
 
 package keeper;
-
-
-
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class Keeper extends Person{
 

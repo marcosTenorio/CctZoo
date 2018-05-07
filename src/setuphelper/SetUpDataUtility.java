@@ -12,7 +12,8 @@ import animals.Reptile;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class SetUpDataUtility {
 
@@ -20,34 +21,34 @@ public class SetUpDataUtility {
     int amtOfAnimals = 100; //amount of Animals
 
     public StoredDataUtility sDU = new StoredDataUtility();
-    
-    public static ArrayList<Keeper>   listOfKeepers  = new ArrayList();
-    public static ArrayList<Animal>   listOfAnimals  = new ArrayList();
-    
+
+    public static ArrayList<Keeper> listOfKeepers = new ArrayList();
+    public static ArrayList<Animal> listOfAnimals = new ArrayList();
+
     public ArrayList<Keeper> currentKeeper = new ArrayList();
 
     public ArrayList<Animal> currentAnimal = new ArrayList();
-    
+
     Random r = new Random();
 
     public void getItReady() {
         createData();
         fillKeepers();
+        fillAnimals();
     }
-    
-    public void createData(){
-        
-       for(int i = 0; i < amtOfKeepers; i++){
-           listOfKeepers.add(new Keeper());
-       }
-       
-       for(int i = 0; i < amtOfAnimals; i++){
-           System.out.println("i: " + i);
-           int randomAnimalNumber = (r.nextInt(5) + 1);
-           listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
-       }
+
+    public void createData() {
+
+        for (int i = 0; i < amtOfKeepers; i++) {
+            listOfKeepers.add(new Keeper());
+        }
+
+        for (int i = 0; i < amtOfAnimals; i++) {
+            int randomAnimalNumber = (r.nextInt(5) + 1);
+            listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
+        }
     }
-    
+
     private Animal createRandomAnimal(int num) {
         switch (num) {
             case 1:
@@ -64,8 +65,8 @@ public class SetUpDataUtility {
                 return null;
         }
     }
-    
-    public void fillKeepers(){
+
+    public void fillKeepers() {
         listOfKeepers.stream().map((k) -> {
             String keeperFirstName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
             String keeperLastName = sDU.keeperSurname[r.nextInt(sDU.keeperSurname.length)];
@@ -75,13 +76,16 @@ public class SetUpDataUtility {
             k.setDob(sDU.keeperDob[r.nextInt(sDU.keeperDob.length)]);
         });
     }
-    
-    public void fillAnimals(){
-        
+
+    public void fillAnimals() {
+        listOfAnimals.stream().forEach((Animal animal) -> {
+            animal.setName(sDU.animalsName[r.nextInt(sDU.animalsName.length)]);
+            animal.setPetName(sDU.petsName[r.nextInt(sDU.petsName.length)]);
+        });
     }
 
     public static ArrayList<Animal> getListOfAnimals() {
         return listOfAnimals;
     }
-    
+
 }
