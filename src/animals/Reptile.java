@@ -11,9 +11,19 @@ package animals;
  * @author Gabriel Oliveira
  */
 public class Reptile extends Animal{
+    
+    private String habitat;
 
     public Reptile(){
 
     }
 
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+    
 }

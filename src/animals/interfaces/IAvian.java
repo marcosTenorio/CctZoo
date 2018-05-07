@@ -11,6 +11,5 @@ package animals.interfaces;
  * @author Gabriel Oliveira
  */
 public interface IAvian{
-
     public void fly();
 }

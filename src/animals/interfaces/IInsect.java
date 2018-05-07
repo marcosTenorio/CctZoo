@@ -11,5 +11,5 @@ package animals.interfaces;
  * @author Gabriel Oliveira
  */
 public interface IInsect{
-
+  public void metamorphose();
 }

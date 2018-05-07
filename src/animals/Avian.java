@@ -11,9 +11,28 @@ package animals;
  * @author Gabriel Oliveira
  */
 public class Avian extends Animal{
-
+    
+    private boolean feathered;
+    private String feathersColor;
+    
     public Avian(){
 
     }
+    
+    public String getFeathersColor() {
+        return feathersColor;
+    }
 
+    public void setFeathersColor(String feathersColor) {
+        this.feathersColor = feathersColor;
+    }
+
+    public boolean isFeathered() {
+        return feathered;
+    }
+
+    public void setFeathered(boolean feathered) {
+        this.feathered = feathered;
+    }
+    
 }

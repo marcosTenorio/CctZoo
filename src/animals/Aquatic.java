@@ -12,8 +12,27 @@ package animals;
  */
 public class Aquatic extends Animal{
 
+    private boolean marine;
+    private boolean freshWater;
+
     public Aquatic(){
 
+    }
+
+    public boolean getMarine(){
+      return this.marine;
+    }
+
+    public boolean getFreshWater(){
+      return this.marine;
+    }
+
+    public void setMarine(boolean marine){
+      this.marine = marine;
+    }
+
+    public void setFreshWater(boolean freshWater){
+      this.freshWater = freshWater;
     }
 
 }

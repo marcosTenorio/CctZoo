@@ -141,12 +141,27 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     @Override
-    public String toString(){
-        return "";
+    public void swim(){
+
     }
 
     @Override
-    public void swim(){
+    public void layeggs() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public void metamorphose(){
+
+    }
+    
+    @Override
+    public void giveBirth(){
+        
+    }
+
+    @Override
+    public String toString(){
+      return "";
     }
 }

@@ -11,5 +11,5 @@ package animals.interfaces;
  * @author Gabriel Oliveira
  */
 public interface IReptile{
-
+  public void layeggs();
 }
