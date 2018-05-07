@@ -10,6 +10,7 @@ package keeper;
  * @author marcos
  */
 public abstract class Person {
-    protected String name;
+    protected String firstName;
+    protected String surName;
     protected String dob;
 }

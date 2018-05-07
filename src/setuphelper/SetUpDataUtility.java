@@ -70,9 +70,9 @@ public class SetUpDataUtility {
     
     public void fillKeepers(){
         currentKeeper.stream().map((k) -> {
-            String keeperName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
-            keeperName += sDU.keeperSurname[r.nextInt(sDU.keeperSurname.length)];
-            k.setName(keeperName);
+            String keeperFirstName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
+            String keeperLastName = sDU.keeperSurname[r.nextInt(sDU.keeperSurname.length)];
+            k.setName(keeperFirstName, keeperLastName);
             return k;
         }).forEachOrdered((k) -> {
             k.setDob(sDU.keeperDob[r.nextInt(sDU.keeperDob.length)]);

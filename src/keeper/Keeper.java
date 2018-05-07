@@ -11,26 +11,35 @@ public class Keeper extends Person{
 
     public Keeper(){}
     
-    public Keeper(String name, String dob) {
-        this.name = name;
+    public Keeper(String firstName, String surName, String dob) {
+        this.firstName = firstName;
+        this.surName = surName;
         this.dob = dob;        
     }
-
-    @Override
-    public String toString() {
-        return "---------------------- \n"
-                + "Keeper: " + name +"\n"
-                + "Date of birth = "+dob +"\n"
-                + "------------------";
-                
-    }
-
+    
     public String getName() {
-        return name;
+        return firstName + " " + surName;
+    }
+    
+    public void setName(String firstName, String surName) {
+        this.firstName = firstName;
+        this.surName = surName;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+    
+    public String getSurName() {
+        return surName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    
+    public void setSurName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getDob() {
@@ -41,6 +50,11 @@ public class Keeper extends Person{
         this.dob = dob;
     }
     
-    
-    
+    @Override
+    public String toString() {
+        return "---------------------- \n"
+                + "Keeper: " + getName() +"\n"
+                + "Date of birth = "+dob +"\n"
+                + "------------------";                
+    }
 }
