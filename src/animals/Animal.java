@@ -24,7 +24,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String petName;
     private String dob;
     private String doa;
-    private char gender;
+    private String gender;
     private boolean offspring;
     private ArrayList<Medication> medication = new ArrayList<>();
     private ArrayList<Medication> vaccine = new ArrayList<>();
@@ -73,11 +73,11 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.doa = doa;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

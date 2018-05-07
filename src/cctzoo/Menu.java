@@ -24,10 +24,7 @@ public class Menu {
     
       
     public void Options(SetUpDataUtility setData){
-
-       
-                
-            System.out.println("MENU");
+            System.out.println("| MENU |");
             System.out.println();
             System.out.println("[1] Search for Animal");
             System.out.println("[2] Search for Keeper");
@@ -54,7 +51,9 @@ public class Menu {
                         Options(setData);
                         break;
                     case 3:
-                        
+                        uptAnimal.addAnimal(setData, printOut);
+                        System.out.println();
+                        Options(setData);
                         break;
                     case 4:
                         uptKeeper.addKeeper(setData, printOut);
@@ -62,7 +61,9 @@ public class Menu {
                         Options(setData);
                         break;
                     case 5:
-                        
+                        uptAnimal.updateAnimal(setData, printOut);
+                        System.out.println();
+                        Options(setData);
                         break;
                     case 6:
                         printOut.displayKeepers(setData);

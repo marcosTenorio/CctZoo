@@ -44,6 +44,7 @@ public class updateKeeper {
             updateKeeper(setData, printOut);
         }else{
             Keeper k = setData.listOfKeepers.get(id-1);
+            System.out.println();
             System.out.println("Name: "+ k.getName());
             System.out.println("Date of birth: "+ k.getDob());
             System.out.println();
@@ -60,6 +61,7 @@ public class updateKeeper {
             String i = sc.next();
             if (i.equals("y")) {
                 printOut.displayKeepers(setData);
+                System.out.println();
             } else {
                 System.out.println();
             }
