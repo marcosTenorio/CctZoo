@@ -42,7 +42,6 @@ public class SetUpDataUtility {
        }
        
        for(int i = 0; i < amtOfAnimals; i++){
-           System.out.println("i: " + i);
            int randomAnimalNumber = (r.nextInt(5) + 1);
            listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
        }

@@ -44,6 +44,9 @@ public class updateKeeper {
             updateKeeper(setData, printOut);
         }else{
             Keeper k = setData.listOfKeepers.get(id-1);
+            System.out.println("Name: "+ k.getName());
+            System.out.println("Date of birth: "+ k.getDob());
+            System.out.println();
             System.out.print("new first name: ");
             String fname = sc.next();
             System.out.print("new surname: ");
@@ -57,6 +60,7 @@ public class updateKeeper {
             String i = sc.next();
             if(i.equals("y")){
                 printOut.displayKeepers(setData);
+                System.out.println();
             }else{
                 System.out.println();
             }
@@ -73,7 +77,10 @@ public class updateKeeper {
         String a = sc.next();
         if(a.equals("y")){
             printOut.displayKeepers(setData);
+            System.out.println();
             searchKeeper(setData, printOut);
+        }else{
+            System.out.println();
         }
    
     }

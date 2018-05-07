@@ -42,8 +42,6 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         for (Animal animal : SetUpDataUtility.getListOfAnimals()) {
             if (animal.getType().equals(type)) {
                 list.add(animal);
-                System.out.print("ID: " + animal.getExhibitNumber());
-                System.out.println(" Name: " + animal.getName());
             }
         }
 
