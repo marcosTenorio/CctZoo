@@ -155,15 +155,16 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     @Override
     public String toString(){
         String output;
-        String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
-        output = "--- Name: " + this.name + " | Type: " +this.getType()+ " | Subtype: " + subtype + " ----\n";
+        //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
+        output = this.getName() + " | Type: " + this.getType();
+        //TODO + " | Subtype: " + subtype + " ----\n";
         output += "  Exibit Number: " + this.exhibitNumber + "\n";
         output += "  Date of Birth: " + this.dob + " | Gender: " + this.gender + "\n";
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Vaccine: " + this.vaccine + " | Medication:" + this.medication + "\n";
-        output += "  Offspring: " + this.offSpring + "\n";
-        output += "  Zookeeper: " + this.zookeeper + "\n";
-        output += this.getString();
+        //output += "  Offspring: " + this.offSpring + "\n";
+        //output += "  Zookeeper: " + this.zookeeper + "\n";
+        output += this.getProperties();
         return output;
     }
 }
