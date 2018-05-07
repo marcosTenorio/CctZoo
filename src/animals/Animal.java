@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package animals;
 
 import animals.health.Medication;
@@ -15,6 +11,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import keeper.Keeper;
+import setuphelper.SetUpDataUtility;
+import setuphelper.StoredDataUtility;
 /**
  *
  * @author Marcos
@@ -39,6 +37,21 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
          animalId = ++lastanimalId;
     }
 
+    
+    public static ArrayList<Animal> list (String type){
+        
+        ArrayList<Animal> list = new ArrayList<>();
+        
+        for (Animal animal : SetUpDataUtility.getListOfAnimals()){
+            if(animal.getType().equals(type)){
+                list.add(animal);
+                System.out.print("ID: " + animal.getExhibitNumber());
+                System.out.println(" Name: " + animal.getName());
+            }
+        }
+        
+        return list;
+    }
     public String getName() {
         return name;
     }
@@ -141,6 +154,16 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     
     @Override
     public String toString(){
-        return "";
+        String output;
+        String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
+        output = "--- Name: " + this.name + " | Type: " +this.getType()+ " | Subtype: " + subtype + " ----\n";
+        output += "  Exibit Number: " + this.exhibitNumber + "\n";
+        output += "  Date of Birth: " + this.dob + " | Gender: " + this.gender + "\n";
+        output += "  Date of Arrival: " + this.doa + "\n";
+        output += "  Vaccine: " + this.vaccine + " | Medication:" + this.medication + "\n";
+        output += "  Offspring: " + this.offSpring + "\n";
+        output += "  Zookeeper: " + this.zookeeper + "\n";
+        output += this.getString();
+        return output;
     }
 }

@@ -25,7 +25,7 @@ public class updateKeeper {
         Keeper k = new Keeper();
         k.setName(firstName, surname);
         k.setDob(dob);
-        setData.currentKeeper.add(k);
+        setData.listOfKeepers.add(k);
         System.out.print("Would you like to add other keeper? (y/n)");
         String u = sc.next();
         if(u.equals("y")){
@@ -38,12 +38,12 @@ public class updateKeeper {
         System.out.println("----Updating Keeper----");
         System.out.print("Please insert the keeper id you would like to update: ");
         int id = sc.nextInt();
-        if(id > setData.currentKeeper.size()){
+        if(id > setData.listOfKeepers.size()){
             System.out.println();
             System.out.println("please, try again");
             updateKeeper(setData, printOut);
         }else{
-            Keeper k = setData.currentKeeper.get(id-1);
+            Keeper k = setData.listOfKeepers.get(id-1);
             System.out.print("new first name: ");
             String fname = sc.next();
             System.out.print("new surname: ");
@@ -67,7 +67,7 @@ public class updateKeeper {
         System.out.println();
         System.out.print("Select keeper's id, from the list above, to see more info: ");
         int id = sc.nextInt();
-        Keeper k = setData.currentKeeper.get(id-1);
+        Keeper k = setData.listOfKeepers.get(id-1);
         System.out.println(k.toString());
         System.out.print("Would you like to keep searching? (y/n)");
         String a = sc.next();
