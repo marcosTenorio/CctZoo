@@ -23,7 +23,7 @@ public class updateKeeper {
         System.out.print("Date of birth(DD/MM/YYYY): ");
         String dob = sc.next();
         Keeper k = new Keeper();
-        k.setName(firstName + " " + surname);
+        k.setName(firstName, surname);
         k.setDob(dob);
         setData.currentKeeper.add(k);
         System.out.print("Would you like to add other keeper? (y/n)");
@@ -50,7 +50,7 @@ public class updateKeeper {
             String surname = sc.next();
             System.out.print("new date of birth(dd//mm/yyyy): ");
             String dob = sc.next();
-            k.setName(fname + " " + surname);
+            k.setName(fname, surname);
             k.setDob(dob);
             System.out.println("Keeper updated!");
             System.out.print("display keepers?(y/n): ");
