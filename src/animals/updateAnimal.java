@@ -56,9 +56,17 @@ public class updateAnimal {
                 System.out.println();
                 addAnimal(setData, printOut);
         }
-                
-        
     }
+    
+    public void printAnimals(String type){
+        for (Animal animal : Animal.list(type.toUpperCase())) {
+            System.out.print("ID: " + animal.getExhibitNumber());
+            System.out.print(" Name: " + animal.getName());
+            System.out.print(" | " + animal.getPetName());
+            System.out.println(" | " + animal.getKeeper().getName());
+        }
+    }
+    
     public void searchAnimal(SetUpDataUtility setData,Printing printOut){
         System.out.println();
         System.out.println("----Searching for Animals----");
@@ -75,39 +83,23 @@ public class updateAnimal {
         try{
                 switch(option){
                     case 1:
-                        for (Animal animal : Animal.list("AQUATIC")) {
-                            System.out.print("ID: " + animal.getExhibitNumber());
-                            System.out.print(" Name: " + animal.getName());
-                            System.out.println(" | " + animal.getPetName());
-                        }
+                            printAnimals("AQUATIC");
+
+                            
+                            printAnimals("AQUATIC");
+                            printAnimals("AQUATIC");
                         break;
                     case 2:
-                        for (Animal animal : Animal.list("AVIAN")) {
-                            System.out.print("ID: " + animal.getExhibitNumber());
-                            System.out.print(" Name: " + animal.getName());
-                            System.out.println(" | " + animal.getPetName());
-                        }
+                            printAnimals("AVIAN");
                         break;
                     case 3:
-                        for (Animal animal : Animal.list("INSECT")) {
-                            System.out.print("ID: " + animal.getExhibitNumber());
-                            System.out.print(" Name: " + animal.getName());
-                            System.out.println(" | " + animal.getPetName());
-                        }
+                            printAnimals("INSECT");
                         break;
                     case 4:
-                        for (Animal animal : Animal.list("MAMMAL")) {
-                            System.out.print("ID: " + animal.getExhibitNumber());
-                            System.out.print(" Name: " + animal.getName());
-                            System.out.println(" | " + animal.getPetName());
-                        }
+                            printAnimals("MAMMAL");
                         break;
                     case 5:
-                        for (Animal animal : Animal.list("REPTILE")) {
-                            System.out.print("ID: " + animal.getExhibitNumber());
-                            System.out.print(" Name: " + animal.getName());
-                            System.out.println(" | " + animal.getPetName());
-                        }
+                            printAnimals("REPTILE");
                         break;
                     case 6:
                         System.out.println();
