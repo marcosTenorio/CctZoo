@@ -18,12 +18,13 @@ import keeper.Keeper;
 /**
  *
  * @author Marcos
+ * @author Gabriel Oliveira
  */
 public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IReptile{
-    
+
     private final int animalId;
     public static int lastanimalId = 0;
-    
+
     private String name;
     private String dob;
     private String doa;
@@ -34,7 +35,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
-    
+
     public Animal(){
          animalId = ++lastanimalId;
     }
@@ -78,7 +79,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setOffspring(boolean offspring) {
         this.offspring = offspring;
     }
-    
+
     public int getExhibitNumber() {
         return exhibitNumber;
     }
@@ -86,7 +87,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setExhibitNumber(int exhibitNumber) {
         this.exhibitNumber = exhibitNumber;
     }
-    
+
     public ArrayList<Medication> getMedication() {
         return medication;
     }
@@ -102,7 +103,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setVaccine(ArrayList<Medication> vaccine) {
         this.vaccine = vaccine;
     }
-    
+
     public SubType getAnimalSubType() {
         return animalSubType;
     }
@@ -118,17 +119,17 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
     }
-    
+
     public String getType(){
-        
+
         String type = this.getClass().getName();
-        
+
         if(type.contains(".")){
             type = type.split("\\.")[1];
         }
         return type;
     }
-    
+
     @Override
     public void fly() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -138,14 +139,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void breastFeed() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public String toString(){
         return "";
     }
-    
+
     @Override
     public void swim(){
-        
+
     }
 }

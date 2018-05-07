@@ -8,6 +8,7 @@ package animals;
 /**
  *
  * @author Marcos
+ * @author Gabriel Oliveira
  */
 enum SubType {
     AQUATIC, AVIAN, INSECT, MAMMAL, REPTILE;

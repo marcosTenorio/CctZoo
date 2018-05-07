@@ -8,11 +8,12 @@ package animals;
 /**
  *
  * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class Avian extends Animal{
-    
+
     public Avian(){
-        
+
     }
-    
+
 }

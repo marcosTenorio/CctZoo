@@ -8,11 +8,12 @@ package animals;
 /**
  *
  * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class Aquatic extends Animal{
-    
+
     public Aquatic(){
-        
+
     }
-    
+
 }
