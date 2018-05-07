@@ -25,8 +25,8 @@ public class SetUpDataUtility {
     
     public StoredDataUtility sDU = new StoredDataUtility();
     
-    public ArrayList<Keeper>   currentKeeper  = new ArrayList();
-    public ArrayList<Animal>   listOfAnimals  = new ArrayList();
+    public static ArrayList<Keeper>   listOfKeepers  = new ArrayList();
+    public static ArrayList<Animal>   listOfAnimals  = new ArrayList();
     
     Random r = new Random();
     
@@ -39,7 +39,7 @@ public class SetUpDataUtility {
     public void createData(){
         
        for(int i = 0; i < amtOfKeepers; i++){
-           currentKeeper.add(new Keeper());
+           listOfKeepers.add(new Keeper());
        }
        
        for(int i = 0; i < amtOfAnimals; i++){
@@ -68,7 +68,7 @@ public class SetUpDataUtility {
     }
     
     public void fillKeepers(){
-        currentKeeper.stream().map((k) -> {
+        listOfKeepers.stream().map((k) -> {
             String keeperFirstName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
             String keeperLastName = sDU.keeperSurname[r.nextInt(sDU.keeperSurname.length)];
             k.setName(keeperFirstName, keeperLastName);
@@ -82,7 +82,7 @@ public class SetUpDataUtility {
         
     }
 
-    public ArrayList<Animal> getListOfAnimals() {
+    public static ArrayList<Animal> getListOfAnimals() {
         return listOfAnimals;
     }
     
