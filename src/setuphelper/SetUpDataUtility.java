@@ -26,8 +26,7 @@ public class SetUpDataUtility {
     public StoredDataUtility sDU = new StoredDataUtility();
     
     public ArrayList<Keeper>   currentKeeper  = new ArrayList();
-    
-    public ArrayList<Animal>   currentAnimal  = new ArrayList();
+    public ArrayList<Animal>   listOfAnimals  = new ArrayList();
     
     Random r = new Random();
     
@@ -45,7 +44,7 @@ public class SetUpDataUtility {
        
        for(int i = 0; i < amtOfAnimals; i++){
            int randomAnimalNumber = (r.nextInt(5) + 1);
-           currentAnimal.add(createRandomAnimal(randomAnimalNumber));
+           listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
        }
     }
     
@@ -82,7 +81,9 @@ public class SetUpDataUtility {
     public void fillAnimals(){
         
     }
- 
-    
+
+    public ArrayList<Animal> getListOfAnimals() {
+        return listOfAnimals;
+    }
     
 }
