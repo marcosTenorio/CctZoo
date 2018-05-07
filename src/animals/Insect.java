@@ -26,4 +26,10 @@ public class Insect extends Animal{
         this.morphed = morphed;
     }
     
+    @Override
+    public String getProperties(){
+        String output = " Has morphed: " + this.morphed + "\n";
+        return output;
+    }
+    
 }

@@ -35,4 +35,11 @@ public class Avian extends Animal{
         this.feathered = feathered;
     }
     
+    @Override
+    public String getProperties(){
+        String output = " is feathered: " + this.feathered + "\n";
+        output += " Feathers colour: " + this.feathersColor + "\n";
+        return output;
+    }
+    
 }

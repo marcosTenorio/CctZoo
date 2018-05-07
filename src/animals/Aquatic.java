@@ -34,5 +34,12 @@ public class Aquatic extends Animal{
     public void setFreshWater(boolean freshWater){
       this.freshWater = freshWater;
     }
+    
+    @Override
+    public String getProperties(){
+        String output = " is marine: " + this.marine + "\n";
+        output += " is fresh water: " + this.freshWater + "\n";
+        return output;
+    }
 
 }

@@ -172,10 +172,13 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void giveBirth(){
         
     }
+    
+    public String getProperties(){
+        return "";
+    }
 
     @Override
     public String toString(){
-<<<<<<< HEAD
         String output;
         //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
         output = this.getName() + " | Type: " + this.getType();
@@ -188,8 +191,5 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         //output += "  Zookeeper: " + this.zookeeper + "\n";
         output += this.getProperties();
         return output;
-=======
-      return "";
->>>>>>> AnimalsRefactor
     }
 }

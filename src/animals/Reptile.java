@@ -26,4 +26,10 @@ public class Reptile extends Animal{
         this.habitat = habitat;
     }
     
+    
+    @Override
+    public String getProperties(){
+        String output = " Natural habitat: " + this.habitat + "\n";
+        return output;
+    }
 }

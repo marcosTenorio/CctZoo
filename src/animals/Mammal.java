@@ -44,4 +44,12 @@ public class Mammal extends Animal{
         this.furColor = furColor;
     }
     
+    @Override
+    public String getProperties(){
+        String output = " Has fur: " + this.fur + "\n";
+        output += " Is pregnant: " + this.pregnancy + "\n";
+        output += " Fur colour: " + this.furColor + "\n";
+        return output;
+    }
+    
 }
