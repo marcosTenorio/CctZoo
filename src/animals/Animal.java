@@ -1,4 +1,3 @@
-
 package animals;
 
 import animals.health.Medication;
@@ -7,18 +6,16 @@ import animals.interfaces.IAvian;
 import animals.interfaces.IInsect;
 import animals.interfaces.IMammal;
 import animals.interfaces.IReptile;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import keeper.Keeper;
 import setuphelper.SetUpDataUtility;
-import setuphelper.StoredDataUtility;
+
 /**
  *
  * @author Marcos
  * @author Gabriel Oliveira
  */
-public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IReptile{
+public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IReptile {
 
     private final int animalId;
     public static int lastanimalId = 0;
@@ -34,25 +31,25 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private Keeper keeper;
     private SubType animalSubType;
 
-    public Animal(){
-         animalId = ++lastanimalId;
+    public Animal() {
+        animalId = ++lastanimalId;
     }
 
-    
-    public static ArrayList<Animal> list (String type){
-        
+    public static ArrayList<Animal> list(String type) {
+
         ArrayList<Animal> list = new ArrayList<>();
-        
-        for (Animal animal : SetUpDataUtility.getListOfAnimals()){
-            if(animal.getType().equals(type)){
+
+        for (Animal animal : SetUpDataUtility.getListOfAnimals()) {
+            if (animal.getType().equals(type)) {
                 list.add(animal);
                 System.out.print("ID: " + animal.getExhibitNumber());
                 System.out.println(" Name: " + animal.getName());
             }
         }
-        
+
         return list;
     }
+
     public String getName() {
         return name;
     }
@@ -133,14 +130,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.keeper = keeper;
     }
 
-    public String getType(){
+    public String getType() {
 
         String type = this.getClass().getName();
 
-        if(type.contains(".")){
+        if (type.contains(".")) {
             type = type.split("\\.")[1];
         }
-        return type;
+        return type.toUpperCase();
     }
 
     @Override
@@ -154,7 +151,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     @Override
-    public void swim(){
+    public void swim() {
 
     }
 
@@ -164,21 +161,21 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     @Override
-    public void metamorphose(){
+    public void metamorphose() {
 
     }
-    
+
     @Override
-    public void giveBirth(){
-        
+    public void giveBirth() {
+
     }
-    
-    public String getProperties(){
+
+    public String getProperties() {
         return "";
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String output;
         //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
         output = this.getName() + " | Type: " + this.getType();
