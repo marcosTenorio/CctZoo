@@ -65,16 +65,16 @@ public class updateKeeper {
     
     public void searchKeeper(SetUpDataUtility setData,Printing printOut){
         System.out.println();
-            System.out.print("Select keeper's id, from the list above, to see more info: ");
-            int id = sc.nextInt();
-            Keeper k = setData.currentKeeper.get(id-1);
-            System.out.println(k.toString());
-            System.out.print("Would you like to keep searching? (y/n)");
-            String a = sc.next();
-            if(a.equals("y")){
-                printOut.displayKeepers(setData);
-                searchKeeper(setData, printOut);
-            }
+        System.out.print("Select keeper's id, from the list above, to see more info: ");
+        int id = sc.nextInt();
+        Keeper k = setData.currentKeeper.get(id-1);
+        System.out.println(k.toString());
+        System.out.print("Would you like to keep searching? (y/n)");
+        String a = sc.next();
+        if(a.equals("y")){
+            printOut.displayKeepers(setData);
+            searchKeeper(setData, printOut);
+        }
    
     }
     

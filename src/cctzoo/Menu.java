@@ -1,5 +1,6 @@
 package cctzoo;
 
+import animals.updateAnimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import keeper.Keeper;
@@ -16,6 +17,8 @@ public class Menu {
     Printing printOut = new Printing();
     
     updateKeeper uptKeeper = new updateKeeper();
+    
+    updateAnimal uptAnimal = new updateAnimal();
     
     Scanner selection = new Scanner(System.in);
     
@@ -40,7 +43,9 @@ public class Menu {
             try{
                 switch(option){
                     case 1:
-                        
+                        uptAnimal.searchAnimal(setData, printOut);
+                        System.out.println();
+                        Options(setData);
                         break;
                     case 2:
                         printOut.displayKeepers(setData);
