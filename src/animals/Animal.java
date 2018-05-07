@@ -138,7 +138,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         }
         return type.toUpperCase();
     }
-
+    
     @Override
     public void fly() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -185,14 +185,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public String toString() {
         String output;
         //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
-        output = this.getName() + " | Type: " + this.getType();
+        output = this.getName() + " | Type: " + this.getType() + " | Subtype: " + animalSubType;
         //TODO + " | Subtype: " + subtype + " ----\n";
         output += "  Exibit Number: " + this.exhibitNumber + "\n";
         output += "  Date of Birth: " + this.dob + " | Gender: " + this.gender + "\n";
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Vaccine: " + this.vaccine + " | Medication:" + this.medication + "\n";
         //output += "  Offspring: " + this.offSpring + "\n";
-        //output += "  Zookeeper: " + this.zookeeper + "\n";
+        output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
         return output;
     }
