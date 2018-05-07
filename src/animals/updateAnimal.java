@@ -32,19 +32,34 @@ public class updateAnimal {
         try{
                 switch(option){
                     case 1:
-                        
+                        for (Animal animal : Animal.list("AQUATIC")) {
+                            System.out.print("ID: " + animal.getExhibitNumber());
+                            System.out.println(" Name: " + animal.getName());
+                        }
                         break;
                     case 2:
-                        
+                        for (Animal animal : Animal.list("AVIAN")) {
+                            System.out.print("ID: " + animal.getExhibitNumber());
+                            System.out.println(" Name: " + animal.getName());
+                        }
                         break;
                     case 3:
-                        
+                        for (Animal animal : Animal.list("INSECT")) {
+                            System.out.print("ID: " + animal.getExhibitNumber());
+                            System.out.println(" Name: " + animal.getName());
+                        }
                         break;
                     case 4:
-                        
+                        for (Animal animal : Animal.list("MAMMAL")) {
+                            System.out.print("ID: " + animal.getExhibitNumber());
+                            System.out.println(" Name: " + animal.getName());
+                        }
                         break;
                     case 5:
-                        
+                        for (Animal animal : Animal.list("REPTILE")) {
+                            System.out.print("ID: " + animal.getExhibitNumber());
+                            System.out.println(" Name: " + animal.getName());
+                        }
                         break;
                     case 6:
                         System.out.println();
@@ -59,6 +74,5 @@ public class updateAnimal {
                 System.out.println();
                 searchAnimal(setData, printOut);
             }
-    
     }
 }

@@ -19,7 +19,7 @@ public class Printing {
         for(int i = 0; i < setData.listOfKeepers.size(); i++){
             Keeper k = setData.listOfKeepers.get(i);
             System.out.print("Keeper ID: " +(i+1));
-            System.out.println("| " + k.getName());
+            System.out.println(" | " + k.getName());
             //System.out.println("Date of birth: " + k.getDob());
             
         }

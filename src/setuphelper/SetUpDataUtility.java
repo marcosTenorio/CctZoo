@@ -37,16 +37,16 @@ public class SetUpDataUtility {
         fillAnimals();
     }
 
-    public void createData() {
-
-        for (int i = 0; i < amtOfKeepers; i++) {
-            listOfKeepers.add(new Keeper());
-        }
-
-        for (int i = 0; i < amtOfAnimals; i++) {
-            int randomAnimalNumber = (r.nextInt(5) + 1);
-            listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
-        }
+    public void createData(){
+        
+       for(int i = 0; i < amtOfKeepers; i++){
+           listOfKeepers.add(new Keeper());
+       }
+       
+       for(int i = 0; i < amtOfAnimals; i++){
+           int randomAnimalNumber = (r.nextInt(5) + 1);
+           listOfAnimals.add(createRandomAnimal(randomAnimalNumber));
+       }
     }
 
     private Animal createRandomAnimal(int num) {
