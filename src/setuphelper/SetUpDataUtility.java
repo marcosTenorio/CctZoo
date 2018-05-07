@@ -77,7 +77,11 @@ public class SetUpDataUtility {
         }).forEachOrdered((k) -> {
             k.setDob(sDU.keeperDob[r.nextInt(sDU.keeperDob.length)]);
         });
-    }  
+    }
+    
+    public void fillAnimals(){
+        
+    }
  
     
     

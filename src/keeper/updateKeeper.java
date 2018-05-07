@@ -65,109 +65,18 @@ public class updateKeeper {
     
     public void searchKeeper(SetUpDataUtility setData,Printing printOut){
         System.out.println();
-        System.out.println("----Searching for Keeper----");
-        System.out.println("[1] Search by name");
-        System.out.println("[2] Search by date of birth");
-        System.out.println("[3] Cancel");
-        System.out.println("");
-            System.out.print("Please make your choice from the options above: ");
-            int option = sc.nextInt();
-            
-            try{
-                switch(option){
-                    case 1:
-                        searchName(setData, printOut);
-                        break;
-                    case 2:
-                        searchDob(setData, printOut);
-                        break;
-                    case 3:
-                        System.out.println();
-                        break;
-                    default:
-                        System.out.println("Please, try again");
-                        System.out.println();
-                        searchKeeper(setData, printOut);
-                }
-            }catch(InputMismatchException e){
-                System.out.println("Please, try again");
-                System.out.println();
+            System.out.print("Select keeper's id, from the list above, to see more info: ");
+            int id = sc.nextInt();
+            Keeper k = setData.currentKeeper.get(id-1);
+            System.out.println(k.toString());
+            System.out.print("Would you like to keep searching? (y/n)");
+            String a = sc.next();
+            if(a.equals("y")){
+                printOut.displayKeepers(setData);
                 searchKeeper(setData, printOut);
             }
-        
+   
     }
     
-    public void searchName(SetUpDataUtility setData,Printing printOut){
-        System.out.print("Please, enter the first name: ");
-        String f = sc.next();
-        System.out.print("surname: ");
-        String s = sc.next();
-        String n = "";
-        String dob = "";
-        int id;
-        for(int i = 0; i < setData.currentKeeper.size(); i++){ //not working
-            Keeper k = setData.currentKeeper.get(i);
-            if(k.getDob().equals(f + " "+ s)){
-                n = k.getName();
-                dob = k.getDob();
-                id = (i+1);
-            }
-        }
-        if(n.equals("") && dob.equals("")){
-            System.out.println();
-            System.out.println("keeper not found!");
-            System.out.print("try again?(y/n): ");
-            String v = sc.next();
-            if(s.equals("y")){
-                searchKeeper(setData, printOut);
-            }else{
-                System.out.println();
-            }
-        }else{
-            System.out.println("");
-            System.out.println("---Results found----");
-            System.out.println("Keeper nº ");
-            System.out.println("Name: " + n);
-            System.out.println("Date of birth: " + dob);
-            System.out.println();
-            System.out.println("//////////////////////");
-            System.out.println();
-        }
-        
-    }
-    public void searchDob(SetUpDataUtility setData,Printing printOut){
-        System.out.print("Please, enter the date of birth(dd/mm/yyyy): ");
-        String x = sc.next();
-        String n = "";
-        String dob = "";
-        int id = 0;
-        for(int i = 0; i < setData.currentKeeper.size(); i++){ //what if more than one result?
-            Keeper k = setData.currentKeeper.get(i);
-            if(k.getDob().equals(x)){
-                n = k.getName();
-                dob = k.getDob();
-                id = (i+1);
-            }
-        }
-        if(n.equals("") && dob.equals("")){
-            System.out.println();
-            System.out.println("keeper not found!");
-            System.out.print("try again?(y/n): ");
-            String s = sc.next();
-            if(s.equals("y")){
-                searchKeeper(setData, printOut);
-            }else{
-                System.out.println();
-            }
-        }else{
-            System.out.println("");
-            System.out.println("---Results found----");
-            System.out.println("Keeper nº "+ id);
-            System.out.println("Name: " + n);
-            System.out.println("Date of birth: " + dob);
-            System.out.println();
-            System.out.println("//////////////////////");
-            System.out.println();
-        }
-    }
+    
 }

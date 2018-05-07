@@ -43,6 +43,7 @@ public class Menu {
                         
                         break;
                     case 2:
+                        printOut.displayKeepers(setData);
                         uptKeeper.searchKeeper(setData, printOut);
                         System.out.println();
                         Options(setData);

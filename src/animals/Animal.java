@@ -80,7 +80,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
     
     public int getExhibitNumber() {
-        return exhibitNumber;
+        return this.animalId;
     }
 
     public void setExhibitNumber(int exhibitNumber) {

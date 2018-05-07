@@ -16,6 +16,15 @@ public class Keeper extends Person{
         this.dob = dob;        
     }
 
+    @Override
+    public String toString() {
+        return "---------------------- \n"
+                + "Keeper: " + name +"\n"
+                + "Date of birth = "+dob +"\n"
+                + "------------------";
+                
+    }
+
     public String getName() {
         return name;
     }
@@ -31,5 +40,7 @@ public class Keeper extends Person{
     public void setDob(String dob) {
         this.dob = dob;
     }
+    
+    
     
 }
