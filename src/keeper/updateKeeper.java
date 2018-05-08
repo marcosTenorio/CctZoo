@@ -56,7 +56,9 @@ public class updateKeeper {
             String dob = sc.next();
             k.setName(fname, surname);
             k.setDob(dob);
+            System.out.println();
             System.out.println("Keeper updated!");
+            System.out.println();
             System.out.print("display keepers?(y/n): ");
             String i = sc.next();
             if (i.equals("y")) {
@@ -73,6 +75,7 @@ public class updateKeeper {
         System.out.print("Select keeper's id, from the list above, to see more info: ");
         int id = sc.nextInt();
         Keeper k = setData.listOfKeepers.get(id - 1);
+        System.out.println();
         System.out.println(k.toString());
         System.out.print("Would you like to keep searching? (y/n)");
         String a = sc.next();
@@ -84,5 +87,4 @@ public class updateKeeper {
             System.out.println();
         }
     }
-
 }

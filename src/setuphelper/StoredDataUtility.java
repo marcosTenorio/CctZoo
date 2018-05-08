@@ -61,15 +61,10 @@ public class StoredDataUtility {
                                                 "03/02/2011","18/02/2011","26/01/2012","06/02/2012","09/04/2012","26/05/2012","28/06/2012",
                                                 "29/12/2013","24/07/2014","05/02/2015","30/06/2015","20/03/2016","06/10/2016","06/10/2017"
                                                 };
+    
     public String[] gender = new String[]{"Male", "Female"};
     
-    public boolean[] offspring = new boolean[]{true, false};
-    
-    public String[] medication = new String[]{
-        
+
+    public String[] medication = new String[]{    
     };
-    
-    public boolean[] vaccined = new boolean[]{true, false};
-    
-    
 }

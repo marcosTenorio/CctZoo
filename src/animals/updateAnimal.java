@@ -70,6 +70,7 @@ public class updateAnimal {
                     setData.listOfAnimals.add(a);
                     a.setKeeper(setData.getAvailableZookeeper(a));
                     printAnimals("AQUATIC");
+                    System.out.println("Animal added successfully!");
                     break;
                 case 2:
                     add();
@@ -84,6 +85,7 @@ public class updateAnimal {
                     setData.listOfAnimals.add(av);
                     av.setKeeper(setData.getAvailableZookeeper(av));
                     printAnimals("AVIAN");
+                    System.out.println("Animal added successfully!");
                     break;
                 case 3:
                     add();
@@ -98,6 +100,7 @@ public class updateAnimal {
                     setData.listOfAnimals.add(i);
                     i.setKeeper(setData.getAvailableZookeeper(i));
                     printAnimals("INSECT");
+                    System.out.println("Animal added successfully!");
                     break;
                 case 4:
                     add();
@@ -112,6 +115,7 @@ public class updateAnimal {
                     setData.listOfAnimals.add(m);
                     m.setKeeper(setData.getAvailableZookeeper(m));
                     printAnimals("MAMMAL");
+                    System.out.println("Animal added successfully!");
                     break;
                 case 5: 
                     add();
@@ -125,6 +129,8 @@ public class updateAnimal {
                     r.isVaccine();
                     setData.listOfAnimals.add(r);
                     r.setKeeper(setData.getAvailableZookeeper(r));
+                    printAnimals("REPTILE");
+                    System.out.println("Animal added successfully!");
                     break;
                 case 6:
                     System.out.println();
@@ -216,7 +222,7 @@ public class updateAnimal {
         }
     }
     
-    public void updateAnimal(SetUpDataUtility setData, Printing printOut){
+    public void updateAnimal(SetUpDataUtility setData){
         System.out.println();
         System.out.println("----Updating Animal----");
         System.out.println("[1] Update Aquatic animals");
@@ -227,36 +233,29 @@ public class updateAnimal {
         System.out.println("[6] Cancel");
         System.out.println();
         System.out.print("Please select an option from the list above: ");
-        int option = sc.nextInt();
-        int i = 0;
-        
+        int option = sc.nextInt();        
         
         try{
                 switch(option){
                     case 1:
                         printAnimals("AQUATIC");
-                        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
-                        i = sca.nextInt();
+                        update(setData);
                         break;
                     case 2:
                         printAnimals("AVIAN");
-                        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
-                        i = sca.nextInt();
+                        update(setData);
                         break;
                     case 3:
                         printAnimals("INSECT");
-                        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
-                        i = sca.nextInt();
+                        update(setData);
                         break;
                     case 4:
                         printAnimals("MAMMAL");
-                        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
-                        i = sca.nextInt();
+                        update(setData);
                         break;
                     case 5:
                         printAnimals("REPTILE");
-                        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
-                        i = sca.nextInt();
+                        update(setData);
                         break;
                     case 6:
                         System.out.println();
@@ -264,23 +263,91 @@ public class updateAnimal {
                     default:
                         System.out.println("Please, try again");
                         System.out.println();
-                        updateAnimal(setData, printOut);
+                        updateAnimal(setData);
                 }
             }catch(InputMismatchException e){
                 System.out.println("Please, try again");
                 System.out.println();
-                updateAnimal(setData, printOut);
-            }
+                updateAnimal(setData);
+            }    
+    }
+    
+    public void update(SetUpDataUtility setData){
+        System.out.print("Please, select the animal id, from the list above, you would like to update: ");
+        int option = sc.nextInt();
         
-            if (option > setData.listOfAnimals.size()) {
+        if (option > setData.listOfAnimals.size()) {
             System.out.println();
             System.out.println("please, try again");
-            updateAnimal(setData, printOut);
-            }else{
-                Animal a = setData.listOfAnimals.get(i - 1);
-                System.out.println();
-                System.out.println(a.toString());
+            updateAnimal(setData);
+        }else{
+            Animal a = setData.listOfAnimals.get(option - 1);
+            System.out.println();
+            System.out.println(a.toString());
+            System.out.println();
+            System.out.println("[1] Update data");
+            System.out.println("[2] Add new medication");
+            System.out.println("[3] Cancel");
+            System.out.println();
+            System.out.print("Please select an option from the list above: ");
+            int i = sc.nextInt(); 
                 
-            }
+            try{
+                switch(i){
+                    case 1:
+                        updateData(a, setData);
+                        System.out.println();
+                        break;
+                    case 2:
+                        
+                        break;
+                    case 3:
+                        System.out.println();
+                        break;
+                    default:
+                        System.out.println("Error, please try again");
+                        System.out.println();
+                        updateAnimal(setData);
+                    }
+            }catch(InputMismatchException e){
+                System.out.println("Error, please try again");
+                System.out.println();
+                updateAnimal(setData);
+            } 
+        }  
+    }
+    
+    public void updateData(Animal a, SetUpDataUtility setData){
+        System.out.println();
+        System.out.print("Name: ");
+        String name = sc.next();
+        a.setName(name);
+        System.out.print("Pet name: ");
+        String pet = sc.next();
+        a.setPetName(pet);
+        System.out.print("Date of birth(dd/mm/yyyy): ");
+        String dob = sc.next();
+        a.setDob(dob);
+        System.out.print("Data of arrival(dd/mm/yyyy): ");
+        String doa = sc.next();
+        a.setDoa(doa);
+        System.out.print("Gender(male/female): ");
+        String g = sc.next();
+        a.setDoa(doa);
+        System.out.print("Offspring(true/false)?  ");
+        boolean o = sc.nextBoolean();
+        a.setOffspring(offspring);
+        System.out.print("Vaccined(true/false)? ");
+        boolean v = sc.nextBoolean();
+        System.out.println();
+        System.out.println("Animal updated successfully!");
+        System.out.println();
+        System.out.print("Would you like to update more animlas(y/n)");
+        String x = sc.next();
+        if (x.equals("y")){
+            updateAnimal(setData);
+        }else{
+            System.out.println();
+        }
     }
 }

@@ -112,29 +112,20 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setVaccine(boolean vaccine) {
         this.vaccine = vaccine;
     }
-
-   
-
     public SubType getAnimalSubType() {
         return animalSubType;
     }
-
     public void setAnimalSubType(SubType animalSubType) {
         this.animalSubType = animalSubType;
     }
-
     public Keeper getKeeper() {
         return keeper;
     }
-
     public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
     }
-
     public String getType() {
-
         String type = this.getClass().getName();
-
         if (type.contains(".")) {
             type = type.split("\\.")[1];
         }
@@ -187,13 +178,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public String toString() {
         String output;
         //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
-        output = this.getName() + " | Type: " + this.getType() + " | Subtype: " + animalSubType;
+        output = this.getName() + " | Type: " + this.getType();
         //TODO + " | Subtype: " + subtype + " ----\n";
         output += "  Exhibit Number: " + this.getExhibitNumber() + "\n";
         output += "  Date of Birth: " + this.getDob() + " | Gender: " + this.gender + "\n";
         output += "  Date of Arrival: " + this.doa + "\n";
-        output += "  Vaccine: " + this.vaccine + " | Medication:" + this.medication + "\n";
-        //output += "  Offspring: " + this.offSpring + "\n";
+        output += "  Offspring: " + this.offspring + "\n";
+        output += "  Vaccined: " + this.vaccine + "\n";
+        output += "  Medication: " + this.medication + "\n";
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
         return output;
