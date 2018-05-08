@@ -62,8 +62,8 @@ public class updateAnimal {
         for (Animal animal : Animal.list(type.toUpperCase())) {
             System.out.print("ID: " + animal.getExhibitNumber());
             System.out.print(" Name: " + animal.getName());
-            System.out.print(" | " + animal.getPetName());
-            System.out.println(" | " + animal.getKeeper().getName());
+            System.out.println(" | " + animal.getPetName());
+            System.out.println("  Keeper: " + animal.getKeeper().getName() + "\n");
         }
     }
     

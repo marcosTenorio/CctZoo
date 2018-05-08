@@ -53,7 +53,7 @@ public class Keeper extends Person{
             }
                 
         } catch (Exception e) {
-            //TODO: handle exception
+            //TODO:
         }
         
         return false;
@@ -118,7 +118,7 @@ public class Keeper extends Person{
         
         output += "\n  List of animals:\n";
         for (Animal animal : listOfAnimals) {
-            output += " " + animal.getExhibitNumber() + " | " + animal.getName() + " | " + animal.getPetName() + "\n";
+            output += "    " + animal.getExhibitNumber() + " | " + animal.getName() + " | " + animal.getPetName() + "\n";
         }
         
         return output;
