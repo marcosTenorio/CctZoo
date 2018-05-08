@@ -1,5 +1,6 @@
 package animals;
 
+import health.Medication;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import setuphelper.Printing;
@@ -10,10 +11,10 @@ import setuphelper.SetUpDataUtility;
  * @author Marcos
  */
 public class updateAnimal {
-    
+
     Scanner sc = new Scanner(System.in);
     Scanner sca = new Scanner(System.in);
-    
+
     private String name;
     private String pet;
     private String dob;
@@ -21,10 +22,8 @@ public class updateAnimal {
     private String gender;
     private boolean vaccine;
     private boolean offspring;
-    
-    
-    
-    public void add(){
+
+    public void add() {
         System.out.print("Name: ");
         name = sc.next();
         System.out.print("Pet name: ");
@@ -40,8 +39,8 @@ public class updateAnimal {
         System.out.print("Offspring(true/false)? ");
         offspring = sc.nextBoolean();
     }
-    
-    public void addAnimal(SetUpDataUtility setData, Printing printOut){
+
+    public void addAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Adding an Animal----");
         System.out.println("[1] Add an Aquatic animal");
@@ -53,12 +52,12 @@ public class updateAnimal {
         System.out.println();
         System.out.print("Please select an option from the list above: ");
         int option = sc.nextInt();
-        
-        try{
-            switch(option){
+
+        try {
+            switch (option) {
                 case 1:
                     add();
-                    Aquatic a = new Aquatic(); 
+                    Aquatic a = new Aquatic();
                     a.setName(name);
                     a.setPetName(pet);
                     a.setDob(dob);
@@ -69,7 +68,7 @@ public class updateAnimal {
                     a.isOffspring();
                     setData.listOfAnimals.add(a);
                     a.setKeeper(setData.getAvailableZookeeper(a));
-                    printAnimals("AQUATIC");
+                    printOut.printAnimals(setData, "AQUATIC");
                     System.out.println("Animal added successfully!");
                     break;
                 case 2:
@@ -84,7 +83,7 @@ public class updateAnimal {
                     av.isOffspring();
                     setData.listOfAnimals.add(av);
                     av.setKeeper(setData.getAvailableZookeeper(av));
-                    printAnimals("AVIAN");
+                    printOut.printAnimals(setData, "AVIAN");
                     System.out.println("Animal added successfully!");
                     break;
                 case 3:
@@ -99,7 +98,7 @@ public class updateAnimal {
                     i.isVaccine();
                     setData.listOfAnimals.add(i);
                     i.setKeeper(setData.getAvailableZookeeper(i));
-                    printAnimals("INSECT");
+                    printOut.printAnimals(setData, "INSECT");
                     System.out.println("Animal added successfully!");
                     break;
                 case 4:
@@ -114,10 +113,10 @@ public class updateAnimal {
                     m.isVaccine();
                     setData.listOfAnimals.add(m);
                     m.setKeeper(setData.getAvailableZookeeper(m));
-                    printAnimals("MAMMAL");
+                    printOut.printAnimals(setData, "MAMMAL");
                     System.out.println("Animal added successfully!");
                     break;
-                case 5: 
+                case 5:
                     add();
                     Reptile r = new Reptile();
                     r.setName(name);
@@ -129,34 +128,25 @@ public class updateAnimal {
                     r.isVaccine();
                     setData.listOfAnimals.add(r);
                     r.setKeeper(setData.getAvailableZookeeper(r));
-                    printAnimals("REPTILE");
+                    printOut.printAnimals(setData, "REPTILE");
                     System.out.println("Animal added successfully!");
                     break;
                 case 6:
                     System.out.println();
                     break;
                 default:
-                        System.out.println("Please, try again");
-                        System.out.println();
-                        addAnimal(setData, printOut);
+                    System.out.println("Please, try again");
+                    System.out.println();
+                    addAnimal(setData, printOut);
             }
-        }catch(InputMismatchException e){
-                System.out.println("Please, try again");
-                System.out.println();
-                addAnimal(setData, printOut);
+        } catch (InputMismatchException e) {
+            System.out.println("Please, try again");
+            System.out.println();
+            addAnimal(setData, printOut);
         }
     }
-    
-    public void printAnimals(String type){
-        for (Animal animal : Animal.list(type.toUpperCase())) {
-            System.out.print("Exhibit Number: " + animal.getExhibitNumber());
-            System.out.print(" Name: " + animal.getName());
-            System.out.println(" | " + animal.getPetName());
-            System.out.println("  Responsible Keeper: " + animal.getKeeper().getName() + "\n");
-        }
-    }
-    
-    public void searchAnimal(SetUpDataUtility setData,Printing printOut){
+
+    public void searchAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Searching for Animals----");
         System.out.println("[1] Search for Aquatic animals");
@@ -168,44 +158,45 @@ public class updateAnimal {
         System.out.println();
         System.out.print("Please select an option from the list above: ");
         int option = sc.nextInt();
-        
-        try{
-                switch(option){
-                    case 1:
-                        printAnimals("AQUATIC");
-                        search(setData, printOut);
-                        break;
-                    case 2:
-                        printAnimals("AVIAN");
-                        search(setData, printOut);
-                        break;
-                    case 3:
-                        printAnimals("INSECT");
-                        search(setData, printOut);
-                        break;
-                    case 4:
-                        printAnimals("MAMMAL");
-                        search(setData, printOut);
-                        break;
-                    case 5:
-                        printAnimals("REPTILE");
-                        search(setData, printOut);
-                        break;
-                    case 6:
-                        System.out.println();
-                        break;
-                    default:
-                        System.out.println("Please, try again");
-                        System.out.println();
-                        searchAnimal(setData, printOut);
-                }
-            }catch(InputMismatchException e){
-                System.out.println("Please, try again");
-                System.out.println();
-                searchAnimal(setData, printOut);
+
+        try {
+            switch (option) {
+                case 1:
+                    printOut.printAnimals(setData, "AQUATIC");
+                    search(setData, printOut);
+                    break;
+                case 2:
+                    printOut.printAnimals(setData, "AVIAN");
+                    search(setData, printOut);
+                    break;
+                case 3:
+                    printOut.printAnimals(setData, "INSECT");
+                    search(setData, printOut);
+                    break;
+                case 4:
+                    printOut.printAnimals(setData, "MAMMAL");
+                    search(setData, printOut);
+                    break;
+                case 5:
+                    printOut.printAnimals(setData, "REPTILE");
+                    search(setData, printOut);
+                    break;
+                case 6:
+                    System.out.println();
+                    break;
+                default:
+                    System.out.println("Please, try again");
+                    System.out.println();
+                    searchAnimal(setData, printOut);
             }
+        } catch (InputMismatchException e) {
+            System.out.println("Please, try again");
+            System.out.println();
+            searchAnimal(setData, printOut);
+        }
     }
-    public void search(SetUpDataUtility setData, Printing printOut){
+
+    public void search(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Select animal's exhibit number, from the list above, to see more info: ");
         int id = sc.nextInt();
@@ -217,12 +208,12 @@ public class updateAnimal {
         if (h.equals("y")) {
             System.out.println();
             searchAnimal(setData, printOut);
-        }else{
+        } else {
             System.out.println();
         }
     }
-    
-    public void updateAnimal(SetUpDataUtility setData){
+
+    public void updateAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Updating Animal----");
         System.out.println("[1] Update Aquatic animals");
@@ -233,54 +224,55 @@ public class updateAnimal {
         System.out.println("[6] Cancel");
         System.out.println();
         System.out.print("Please select an option from the list above: ");
-        int option = sc.nextInt();        
-        
-        try{
-                switch(option){
-                    case 1:
-                        printAnimals("AQUATIC");
-                        update(setData);
-                        break;
-                    case 2:
-                        printAnimals("AVIAN");
-                        update(setData);
-                        break;
-                    case 3:
-                        printAnimals("INSECT");
-                        update(setData);
-                        break;
-                    case 4:
-                        printAnimals("MAMMAL");
-                        update(setData);
-                        break;
-                    case 5:
-                        printAnimals("REPTILE");
-                        update(setData);
-                        break;
-                    case 6:
-                        System.out.println();
-                        break;
-                    default:
-                        System.out.println("Please, try again");
-                        System.out.println();
-                        updateAnimal(setData);
-                }
-            }catch(InputMismatchException e){
-                System.out.println("Please, try again");
-                System.out.println();
-                updateAnimal(setData);
-            }    
+        int option = sc.nextInt();
+
+        try {
+            switch (option) {
+                case 1:
+                    printOut.printAnimals(setData, "AQUATIC");
+                    update(setData, printOut);
+                    break;
+                case 2:
+                    printOut.printAnimals(setData, "AVIAN");
+                    update(setData, printOut);
+                    break;
+                case 3:
+                    printOut.printAnimals(setData, "INSECT");
+                    update(setData, printOut);
+                    break;
+                case 4:
+                    printOut.printAnimals(setData, "MAMMAL");
+                    update(setData, printOut);
+                    break;
+                case 5:
+                    printOut.printAnimals(setData, "REPTILE");
+                    update(setData, printOut);
+                    break;
+                case 6:
+                    System.out.println();
+                    break;
+                default:
+                    System.out.println("Please, try again");
+                    System.out.println();
+                    updateAnimal(setData, printOut);
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Please, try again");
+            System.out.println();
+            updateAnimal(setData, printOut);
+        }
     }
-    
-    public void update(SetUpDataUtility setData){
+
+    public void update(SetUpDataUtility setData, Printing printOut) {
         System.out.print("Please, select the animal id, from the list above, you would like to update: ");
         int option = sc.nextInt();
-        
+        System.out.println();
+
         if (option > setData.listOfAnimals.size()) {
             System.out.println();
             System.out.println("please, try again");
-            updateAnimal(setData);
-        }else{
+            updateAnimal(setData, printOut);
+        } else {
             Animal a = setData.listOfAnimals.get(option - 1);
             System.out.println();
             System.out.println(a.toString());
@@ -290,16 +282,17 @@ public class updateAnimal {
             System.out.println("[3] Cancel");
             System.out.println();
             System.out.print("Please select an option from the list above: ");
-            int i = sc.nextInt(); 
-                
-            try{
-                switch(i){
+            int i = sc.nextInt();
+
+            try {
+                switch (i) {
                     case 1:
-                        updateData(a, setData);
+                        updateData(a, setData, printOut);
                         System.out.println();
                         break;
                     case 2:
-                        
+                        medication(a, setData, printOut);
+                        System.out.println();
                         break;
                     case 3:
                         System.out.println();
@@ -307,17 +300,17 @@ public class updateAnimal {
                     default:
                         System.out.println("Error, please try again");
                         System.out.println();
-                        updateAnimal(setData);
-                    }
-            }catch(InputMismatchException e){
+                        updateAnimal(setData, printOut);
+                }
+            } catch (InputMismatchException e) {
                 System.out.println("Error, please try again");
                 System.out.println();
-                updateAnimal(setData);
-            } 
-        }  
+                updateAnimal(setData, printOut);
+            }
+        }
     }
-    
-    public void updateData(Animal a, SetUpDataUtility setData){
+
+    public void updateData(Animal a, SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Name: ");
         String name = sc.next();
@@ -344,10 +337,30 @@ public class updateAnimal {
         System.out.println();
         System.out.print("Would you like to update more animlas(y/n)");
         String x = sc.next();
-        if (x.equals("y")){
-            updateAnimal(setData);
-        }else{
+        if (x.equals("y")) {
+            updateAnimal(setData, printOut);
+        } else {
             System.out.println();
         }
+    }
+
+    public void medication(Animal a, SetUpDataUtility setData, Printing printOut) {
+        System.out.println();
+        System.out.print("date(dd/mm/yyyy): ");
+        String date = sc.next();
+        System.out.print("description: ");
+        String desc = sc.next();
+        Medication m = new Medication(date, desc);
+        System.out.println();
+        a.setMedication(m);
+        System.out.println(a.toString());
+        System.out.print("Would you like to update other animal?(y/n) ");
+        String option = sc.next();
+        if (option.equals("y")) {
+            updateAnimal(setData, printOut);
+        } else {
+            System.out.println();
+        }
+
     }
 }

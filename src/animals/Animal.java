@@ -1,6 +1,6 @@
 package animals;
 
-import animals.health.Medication;
+import health.Medication;
 import animals.interfaces.IAquatic;
 import animals.interfaces.IAvian;
 import animals.interfaces.IInsect;
@@ -9,6 +9,7 @@ import animals.interfaces.IReptile;
 import java.util.ArrayList;
 import keeper.Keeper;
 import setuphelper.SetUpDataUtility;
+import health.Medication;
 
 /**
  *
@@ -26,12 +27,13 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String doa;
     private String gender;
     private boolean offspring;
-    protected ArrayList<Medication> medication = new ArrayList<>();
+    //protected ArrayList<Medication> medication = new ArrayList<>();
     private boolean vaccine;
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
-
+    private Medication Medication;
+    
     public Animal() {
         animalId = ++lastanimalId;
     }
@@ -97,13 +99,15 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.exhibitNumber = exhibitNumber;
     }
 
-    public ArrayList<Medication> getMedication() {
-        return medication;
+    public Medication getMedication() {
+        return Medication;
     }
 
-    public void setMedication(ArrayList<Medication> medication) {
-        this.medication = medication;
+    public void setMedication(Medication Medication) {
+        this.Medication = Medication;
     }
+
+    
 
     public boolean isVaccine() {
         return vaccine;
@@ -185,7 +189,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Offspring: " + this.offspring + "\n";
         output += "  Vaccined: " + this.vaccine + "\n";
-        output += "  Medication: " + this.medication + "\n";
+        output += "  Medication: " + this.getMedication() + "\n";
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
         return output;

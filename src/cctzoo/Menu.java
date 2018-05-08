@@ -61,7 +61,7 @@ public class Menu {
                         Options(setData);
                         break;
                     case 5:
-                        uptAnimal.updateAnimal(setData);
+                        uptAnimal.updateAnimal(setData, printOut);
                         System.out.println();
                         Options(setData);
                         break;

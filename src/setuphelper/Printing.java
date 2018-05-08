@@ -24,20 +24,13 @@ public class Printing {
             
         }
     }
-    public void displayAnimals(SetUpDataUtility setData){
-        for(int i = 0; i < setData.listOfAnimals.size(); i++){
-            Animal a = setData.listOfAnimals.get(i);
-            System.out.println("Exhibit number: " + a.getExhibitNumber());
-            System.out.println("Name: " + a.getName());
-            System.out.println("Date of birth: " + a.getDob());
-            System.out.println("Date of arrival: " + a.getDoa());
-            System.out.println("gender: " + a.getGender());
-            System.out.println("offspring? "+ a.isOffspring());
-            System.out.println("Medication: " + a.getMedication());
-            System.out.println("Vaccined: " + a.isVaccine());
-            System.out.println();
-            System.out.println("//////////////////////");
-            System.out.println();
+   
+    public void printAnimals(SetUpDataUtility setData, String type){
+        for (Animal animal : Animal.list(type.toUpperCase())) {
+            System.out.print("Exhibit Number: " + animal.getExhibitNumber());
+            System.out.print(" Name: " + animal.getName());
+            System.out.println(" | " + animal.getPetName());
+            System.out.println("  Responsible Keeper: " + animal.getKeeper().getName() + "\n");
         }
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package animals.health;
+package health;
 
 /**
  *
@@ -39,8 +39,10 @@ public class Medication {
     @Override
     public String toString(){
         String output = "";
-        output += "  Date: " + date;
-        output += "  Description: " + description;
+        output += "-----------------------------" + "\n";
+        output += "                 |Date: " + date + "\n";
+        output += "                 |Description: " + description+ "\n";
+        output += "  ----------------------------------------";
         return output;
     }
 }
