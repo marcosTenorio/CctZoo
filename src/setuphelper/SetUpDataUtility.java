@@ -88,8 +88,10 @@ public class SetUpDataUtility {
             animal.setName(sDU.animalsName[r.nextInt(sDU.animalsName.length)]);
             animal.setPetName(sDU.petsName[r.nextInt(sDU.petsName.length)]);
             animal.setKeeper(getAvailableZookeeper(animal));
+            animal.setDob(sDU.animalDob[r.nextInt(sDU.animalDob.length)]);
             animal.setDoa(sDU.dateOfArrival[r.nextInt(sDU.dateOfArrival.length)]);
             animal.setGender(sDU.gender[r.nextInt(sDU.gender.length)]);
+            //animal.setVaccine(sDU.vaccined[r.nextBoolean(sDU.vaccined)]);
         });
     }
     

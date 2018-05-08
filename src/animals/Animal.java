@@ -26,8 +26,8 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String doa;
     private String gender;
     private boolean offspring;
-    private ArrayList<Medication> medication = new ArrayList<>();
-    private ArrayList<Medication> vaccine = new ArrayList<>();
+    protected ArrayList<Medication> medication = new ArrayList<>();
+    private boolean vaccine;
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
@@ -105,13 +105,15 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.medication = medication;
     }
 
-    public ArrayList<Medication> getVaccine() {
+    public boolean isVaccine() {
         return vaccine;
     }
 
-    public void setVaccine(ArrayList<Medication> vaccine) {
+    public void setVaccine(boolean vaccine) {
         this.vaccine = vaccine;
     }
+
+   
 
     public SubType getAnimalSubType() {
         return animalSubType;
@@ -187,8 +189,8 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
         output = this.getName() + " | Type: " + this.getType() + " | Subtype: " + animalSubType;
         //TODO + " | Subtype: " + subtype + " ----\n";
-        output += "  Exibit Number: " + this.exhibitNumber + "\n";
-        output += "  Date of Birth: " + this.dob + " | Gender: " + this.gender + "\n";
+        output += "  Exhibit Number: " + this.getExhibitNumber() + "\n";
+        output += "  Date of Birth: " + this.getDob() + " | Gender: " + this.gender + "\n";
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Vaccine: " + this.vaccine + " | Medication:" + this.medication + "\n";
         //output += "  Offspring: " + this.offSpring + "\n";

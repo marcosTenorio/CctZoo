@@ -63,17 +63,13 @@ public class StoredDataUtility {
                                                 };
     public String[] gender = new String[]{"Male", "Female"};
     
-    public String[] offspring = new String[]{
-        
-    };
+    public boolean[] offspring = new boolean[]{true, false};
     
     public String[] medication = new String[]{
         
     };
     
-    public String[] vaccined = new String[]{
-        
-    };
+    public boolean[] vaccined = new boolean[]{true, false};
     
     
 }

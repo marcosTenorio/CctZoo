@@ -34,7 +34,7 @@ public class Printing {
             System.out.println("gender: " + a.getGender());
             System.out.println("offspring? "+ a.isOffspring());
             System.out.println("Medication: " + a.getMedication());
-            System.out.println("Vaccine: " + a.getVaccine());
+            System.out.println("Vaccined: " + a.isVaccine());
             System.out.println();
             System.out.println("//////////////////////");
             System.out.println();
