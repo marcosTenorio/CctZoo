@@ -136,6 +136,9 @@ public class updateAnimal {
         }
     }
     
+    /**
+     *
+     */
     public void add() {
         System.out.print("Name: ");
         name = sc.next();

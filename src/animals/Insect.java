@@ -18,18 +18,33 @@ public class Insect extends Animal{
     
     Random r = new Random();
 
+    /**
+     *
+     */
     public Insect(){
         this.setMorphed(r.nextBoolean());
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isMorphed() {
         return morphed;
     }
 
+    /**
+     *
+     * @param morphed
+     */
     public void setMorphed(boolean morphed) {
         this.morphed = morphed;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProperties(){
         String output = " Has morphed: " + this.morphed + "\n";

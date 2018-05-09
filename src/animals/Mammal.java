@@ -21,8 +21,14 @@ public class Mammal extends Animal{
     
     Random r = new Random();
     
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
 
+    /**
+     *
+     */
     public Mammal(){
         this.setFur(r.nextBoolean());
         this.setPregnancy(r.nextBoolean());
@@ -31,30 +37,58 @@ public class Mammal extends Animal{
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getFur() {
         return fur;
     }
 
+    /**
+     *
+     * @param fur
+     */
     public void setFur(boolean fur) {
         this.fur = fur;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getPregnancy() {
         return pregnancy;
     }
 
+    /**
+     *
+     * @param pregnancy
+     */
     public void setPregnancy(boolean pregnancy) {
         this.pregnancy = pregnancy;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFurColor() {
         return furColor;
     }
 
+    /**
+     *
+     * @param furColor
+     */
     public void setFurColor(String furColor) {
         this.furColor = furColor;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProperties(){
         String output = " Has fur: " + this.fur + "\n";

@@ -21,22 +21,41 @@ public class SetUpDataUtility {
     int amtOfKeepers = 40; //amount of Keepers
     int amtOfAnimals = 100; //amount of Animals
 
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
 
+    /**
+     *
+     */
     public static ArrayList<Keeper> listOfKeepers = new ArrayList();
+
+    /**
+     *
+     */
     public static ArrayList<Animal> listOfAnimals = new ArrayList();
     
+    /**
+     *
+     */
     public static SubType[] animalSubtype = new SubType[]{SubType.AQUATIC,
         SubType.AVIAN, SubType.INSECT, SubType.MAMMAL, SubType.REPTILE};
     
     Random r = new Random();
 
+    /**
+     *
+     */
     public void getItReady() {
         createData();
         fillKeepers();
         fillAnimals();
     }
 
+    /**
+     *
+     */
     public void createData(){
         
        for(int i = 0; i < amtOfKeepers; i++){
@@ -66,6 +85,9 @@ public class SetUpDataUtility {
         }
     }
 
+    /**
+     *
+     */
     public void fillKeepers() {
         listOfKeepers.stream().map((Keeper k) -> {
             String keeperFirstName = sDU.keeperFirstName[r.nextInt(sDU.keeperFirstName.length)];
@@ -83,6 +105,9 @@ public class SetUpDataUtility {
         
     }
     
+    /**
+     *
+     */
     public void fillAnimals() {
         listOfAnimals.stream().forEach((Animal animal) -> {
             animal.setName(sDU.animalsName[r.nextInt(sDU.animalsName.length)]);
@@ -96,6 +121,11 @@ public class SetUpDataUtility {
         });
     }
     
+    /**
+     *
+     * @param animal
+     * @return
+     */
     public Keeper getAvailableZookeeper(Animal animal){
         int rn = r.nextInt(listOfKeepers.size());
 
@@ -111,6 +141,10 @@ public class SetUpDataUtility {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Animal> getListOfAnimals() {
         return listOfAnimals;
     }

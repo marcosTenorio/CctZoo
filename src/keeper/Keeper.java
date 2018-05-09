@@ -17,11 +17,20 @@ public class Keeper extends Person{
     private final ArrayList<SubType> canLookAfter;
     private final ArrayList<Animal> listOfAnimals;
 
+    /**
+     *
+     */
     public Keeper(){
         this.canLookAfter = new ArrayList<>();
         this.listOfAnimals = new ArrayList<>();
     }
     
+    /**
+     *
+     * @param firstName
+     * @param surName
+     * @param dob
+     */
     public Keeper(String firstName, String surName, String dob) {
         this.canLookAfter = new ArrayList<>();
         this.listOfAnimals = new ArrayList<>();
@@ -30,6 +39,10 @@ public class Keeper extends Person{
         this.dob = dob;        
     }
     
+    /**
+     *
+     * @param animal
+     */
     public void addAnimal(Animal animal){
         if(checkAnimalCompatibility(animal)){
             if(canLookAfter.size() < maxAnimals){
@@ -38,10 +51,19 @@ public class Keeper extends Person{
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public boolean available(){
         return 10 >= listOfAnimals.size();
     }
     
+    /**
+     *
+     * @param animal
+     * @return
+     */
     public boolean checkAnimalCompatibility(Animal animal){
         try {
             if (canLookAfter.stream().anyMatch((item) -> (
@@ -59,35 +81,68 @@ public class Keeper extends Person{
         return false;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return firstName + " " + surName;
     }
     
+    /**
+     *
+     * @param firstName
+     * @param surName
+     */
     public void setName(String firstName, String surName) {
         this.firstName = firstName;
         this.surName = surName;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getFirstName() {
         return firstName;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getSurName() {
         return surName;
     }
 
+    /**
+     *
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
     
+    /**
+     *
+     * @param firstName
+     */
     public void setSurName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDob() {
         return dob;
     }
 
+    /**
+     *
+     * @param dob
+     */
     public void setDob(String dob) {
         this.dob = dob;
     }
@@ -96,6 +151,10 @@ public class Keeper extends Person{
         return canLookAfter.stream().anyMatch((item) -> (item.equals(type)));
     }
 
+    /**
+     *
+     * @param subType
+     */
     public void addAnimalType(SubType subType) {
         
         if(isTypeOnList(subType)){

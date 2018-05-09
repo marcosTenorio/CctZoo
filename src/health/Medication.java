@@ -15,23 +15,44 @@ public class Medication {
     private String date;
     private String description;
     
+    /**
+     *
+     * @param date
+     * @param description
+     */
     public Medication(String date, String description){
         this.date = date;
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDate() {
         return date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(String date) {
         this.date = date;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }

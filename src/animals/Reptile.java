@@ -19,20 +19,38 @@ public class Reptile extends Animal{
     
     Random r = new Random();
     
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
 
+    /**
+     *
+     */
     public Reptile(){
         this.setHabitat(sDU.habitat[r.nextInt(sDU.habitat.length)]);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getHabitat() {
         return habitat;
     }
 
+    /**
+     *
+     * @param habitat
+     */
     public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProperties(){
         String output = " Natural habitat: " + this.habitat + "\n";

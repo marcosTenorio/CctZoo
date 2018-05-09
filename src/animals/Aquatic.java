@@ -19,19 +19,34 @@ public class Aquatic extends Animal{
     
     Random r = new Random();
 
+    /**
+     *
+     */
     public Aquatic(){
         this.setMarine(r.nextBoolean());
         this.setFreshWater(r.nextBoolean());
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getMarine(){
       return this.marine;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean getFreshWater(){
       return this.marine;
     }
 
+    /**
+     *
+     * @param marine
+     */
     public void setMarine(boolean marine){
       this.marine = marine;
       if(this.marine == true){
@@ -41,6 +56,10 @@ public class Aquatic extends Animal{
       }
     }
 
+    /**
+     *
+     * @param freshWater
+     */
     public void setFreshWater(boolean freshWater){
       this.freshWater = freshWater;
       if(this.freshWater == true){
@@ -50,6 +69,10 @@ public class Aquatic extends Animal{
       }
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProperties(){
         String output = " is marine: " + this.marine + "\n";

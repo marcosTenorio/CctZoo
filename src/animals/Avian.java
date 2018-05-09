@@ -19,8 +19,14 @@ public class Avian extends Animal{
     
     Random r = new Random();
     
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
     
+    /**
+     *
+     */
     public Avian(){
         this.setFeathered(r.nextBoolean());
         if(this.isFeathered() != false){
@@ -28,23 +34,43 @@ public class Avian extends Animal{
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public String getFeathersColor() {
         return feathersColor;
     }
 
+    /**
+     *
+     * @param feathersColor
+     */
     public void setFeathersColor(String feathersColor) {
         this.feathersColor = feathersColor;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isFeathered() {
         return feathered;
         
     }
 
+    /**
+     *
+     * @param feathered
+     */
     public void setFeathered(boolean feathered) {
         this.feathered = feathered;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProperties(){
         String output = " is feathered: " + this.feathered + "\n";
