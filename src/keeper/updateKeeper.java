@@ -12,7 +12,12 @@ import setuphelper.SetUpDataUtility;
 public class updateKeeper {
 
     Scanner sc = new Scanner(System.in);
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void addKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Adding new Keeper------");
@@ -32,7 +37,12 @@ public class updateKeeper {
             addKeeper(setData, printOut);
         }
     }
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void updateKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Updating Keeper----");
@@ -69,7 +79,12 @@ public class updateKeeper {
             }
         }
     }
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void searchKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Select keeper's id, from the list above, to see more info: ");

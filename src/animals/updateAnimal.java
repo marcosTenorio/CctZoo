@@ -22,24 +22,14 @@ public class updateAnimal {
     private String gender;
     private boolean vaccine;
     private boolean offspring;
-
-    public void add() {
-        System.out.print("Name: ");
-        name = sc.next();
-        System.out.print("Pet name: ");
-        pet = sc.next();
-        System.out.print("Date of birth(dd/mm/yyyy): ");
-        dob = sc.next();
-        System.out.print("Date of arrival(dd/mm/yyyy): ");
-        doa = sc.next();
-        System.out.print("Gender(male/female): ");
-        gender = sc.next();
-        System.out.print("Vaccined(true/false)? ");
-        vaccine = sc.nextBoolean();
-        System.out.print("Offspring(true/false)? ");
-        offspring = sc.nextBoolean();
-    }
-
+    
+    
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void addAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Adding an Animal----");
@@ -145,7 +135,29 @@ public class updateAnimal {
             addAnimal(setData, printOut);
         }
     }
-
+    
+    public void add() {
+        System.out.print("Name: ");
+        name = sc.next();
+        System.out.print("Pet name: ");
+        pet = sc.next();
+        System.out.print("Date of birth(dd/mm/yyyy): ");
+        dob = sc.next();
+        System.out.print("Date of arrival(dd/mm/yyyy): ");
+        doa = sc.next();
+        System.out.print("Gender(male/female): ");
+        gender = sc.next();
+        System.out.print("Vaccined(true/false)? ");
+        vaccine = sc.nextBoolean();
+        System.out.print("Offspring(true/false)? ");
+        offspring = sc.nextBoolean();
+    }
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void searchAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Searching for Animals----");
@@ -195,7 +207,12 @@ public class updateAnimal {
             searchAnimal(setData, printOut);
         }
     }
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void search(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Select animal's exhibit number, from the list above, to see more info: ");
@@ -212,7 +229,12 @@ public class updateAnimal {
             System.out.println();
         }
     }
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void updateAnimal(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.println("----Updating Animal----");
@@ -262,7 +284,12 @@ public class updateAnimal {
             updateAnimal(setData, printOut);
         }
     }
-
+    
+    /**
+     *
+     * @param setData
+     * @param printOut
+     */
     public void update(SetUpDataUtility setData, Printing printOut) {
         System.out.print("Please, select the animal id, from the list above, you would like to update: ");
         int option = sc.nextInt();
@@ -309,7 +336,13 @@ public class updateAnimal {
             }
         }
     }
-
+    
+    /**
+     *
+     * @param a
+     * @param setData
+     * @param printOut
+     */
     public void updateData(Animal a, SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("Name: ");
@@ -343,7 +376,12 @@ public class updateAnimal {
             System.out.println();
         }
     }
-
+     /**
+     *
+     * @param a
+     * @param setData
+     * @param printOut
+     */
     public void medication(Animal a, SetUpDataUtility setData, Printing printOut) {
         System.out.println();
         System.out.print("date(dd/mm/yyyy): ");

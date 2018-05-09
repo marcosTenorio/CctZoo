@@ -46,7 +46,6 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
                 list.add(animal);
             }
         }
-
         return list;
     }
 
@@ -106,8 +105,6 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.Medication = Medication;
     }
 
-    
-
     public boolean isVaccine() {
         return vaccine;
     }
@@ -147,7 +144,6 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
 
     @Override
     public void swim() {
-
     }
 
     @Override
@@ -157,12 +153,10 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
 
     @Override
     public void metamorphose() {
-
     }
 
     @Override
     public void giveBirth() {
-
     }
 
     public String getProperties() {

@@ -5,6 +5,9 @@
  */
 package animals;
 
+import java.util.Random;
+import setuphelper.StoredDataUtility;
+
 /**
  *
  * @author Marcos
@@ -13,9 +16,13 @@ package animals;
 public class Reptile extends Animal{
     
     private String habitat;
+    
+    Random r = new Random();
+    
+    public StoredDataUtility sDU = new StoredDataUtility();
 
     public Reptile(){
-
+        this.setHabitat(sDU.habitat[r.nextInt(sDU.habitat.length)]);
     }
 
     public String getHabitat() {
@@ -25,7 +32,6 @@ public class Reptile extends Animal{
     public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
-    
     
     @Override
     public String getProperties(){

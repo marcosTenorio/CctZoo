@@ -22,7 +22,10 @@ public class Menu {
     
     Scanner selection = new Scanner(System.in);
     
-      
+    /**
+     *
+     * @param setData
+     */
     public void Options(SetUpDataUtility setData){
             System.out.println("| MENU |");
             System.out.println();

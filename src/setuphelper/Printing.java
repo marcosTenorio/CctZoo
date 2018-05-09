@@ -20,11 +20,14 @@ public class Printing {
             Keeper k = setData.listOfKeepers.get(i);
             System.out.print("Keeper ID: " +(i+1));
             System.out.println(" | " + k.getName());
-            //System.out.println("Date of birth: " + k.getDob());
-            
         }
     }
-   
+    
+    /**
+     *
+     * @param setData
+     * @param type
+     */
     public void printAnimals(SetUpDataUtility setData, String type){
         for (Animal animal : Animal.list(type.toUpperCase())) {
             System.out.print("Exhibit Number: " + animal.getExhibitNumber());
