@@ -31,10 +31,11 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
-    private Medication Medication;
+    private ArrayList<Medication> medicationList;
     
     public Animal() {
         animalId = ++lastanimalId;
+        medicationList = new ArrayList<>();
     }
 
     public static ArrayList<Animal> list(String type) {
@@ -97,12 +98,12 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.exhibitNumber = exhibitNumber;
     }
 
-    public Medication getMedication() {
-        return Medication;
+    public ArrayList<Medication> getMedication() {
+        return medicationList;
     }
 
-    public void setMedication(Medication Medication) {
-        this.Medication = Medication;
+    public void setMedication(Medication medication) {
+        this.medicationList.add(medication);
     }
 
     public boolean isVaccine() {
@@ -182,7 +183,16 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Offspring: " + this.offspring + "\n";
         output += "  Vaccined: " + this.vaccine + "\n";
-        output += "  Medication: " + this.getMedication() + "\n";
+        
+        output += "  Medication:\n";
+
+        /**/
+        for (Medication medication : medicationList) {
+            output += "    Date: " + medication.getDate() + "\n";
+            output += "    Description: " + medication.getDescription() + "\n";
+        }
+        /**/
+        
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
         return output;
