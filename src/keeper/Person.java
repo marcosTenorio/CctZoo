@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package keeper;
+
 /**
  *
  * @author Marcos
@@ -12,17 +8,17 @@ package keeper;
 public abstract class Person {
 
     /**
-     *
+     * @see Keeper
      */
     protected String firstName;
 
     /**
-     *
+     * @see Keeper
      */
     protected String surName;
 
     /**
-     *
+     * @see Keeper
      */
     protected String dob;
 }
