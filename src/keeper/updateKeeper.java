@@ -12,7 +12,7 @@ import setuphelper.SetUpDataUtility;
 public class updateKeeper {
 
     Scanner sc = new Scanner(System.in);
-    
+
     /**
      *
      * @param setData
@@ -37,7 +37,7 @@ public class updateKeeper {
             addKeeper(setData, printOut);
         }
     }
-    
+
     /**
      *
      * @param setData
@@ -52,11 +52,11 @@ public class updateKeeper {
             System.out.println();
             System.out.println("please, try again");
             updateKeeper(setData, printOut);
-        }else{
-            Keeper k = setData.listOfKeepers.get(id-1);
+        } else {
+            Keeper k = setData.listOfKeepers.get(id - 1);
             System.out.println();
-            System.out.println("Name: "+ k.getName());
-            System.out.println("Date of birth: "+ k.getDob());
+            System.out.println("Name: " + k.getName());
+            System.out.println("Date of birth: " + k.getDob());
             System.out.println();
             System.out.print("new first name: ");
             String fname = sc.next();
@@ -79,7 +79,7 @@ public class updateKeeper {
             }
         }
     }
-    
+
     /**
      *
      * @param setData
@@ -98,7 +98,7 @@ public class updateKeeper {
             printOut.displayKeepers(setData);
             System.out.println();
             searchKeeper(setData, printOut);
-        }else{
+        } else {
             System.out.println();
         }
     }
