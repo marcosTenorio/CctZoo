@@ -12,13 +12,13 @@ import java.util.Random;
  * @author Marcos
  * @author Gabriel Oliveira
  */
-public class Insect extends Animal{
+public class Insect extends Animal {
 
     private boolean morphed;
-    
+
     Random r = new Random();
 
-    public Insect(){
+    public Insect() {
         this.setMorphed(r.nextBoolean());
     }
 
@@ -29,11 +29,11 @@ public class Insect extends Animal{
     public void setMorphed(boolean morphed) {
         this.morphed = morphed;
     }
-    
+
     @Override
-    public String getProperties(){
+    public String getProperties() {
         String output = " Has morphed: " + this.morphed + "\n";
         return output;
     }
-    
+
 }

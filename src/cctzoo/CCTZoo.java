@@ -4,7 +4,8 @@ import setuphelper.SetUpDataUtility;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class CCTZoo {
 
