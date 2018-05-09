@@ -5,6 +5,8 @@
  */
 package animals;
 
+import java.util.Random;
+
 /**
  *
  * @author Marcos
@@ -14,9 +16,12 @@ public class Aquatic extends Animal{
 
     private boolean marine;
     private boolean freshWater;
+    
+    Random r = new Random();
 
     public Aquatic(){
-
+        this.setMarine(r.nextBoolean());
+        this.setFreshWater(r.nextBoolean());
     }
 
     public boolean getMarine(){
@@ -29,10 +34,20 @@ public class Aquatic extends Animal{
 
     public void setMarine(boolean marine){
       this.marine = marine;
+      if(this.marine == true){
+          this.freshWater = false;
+      }else{
+          this.freshWater = true;
+      }
     }
 
     public void setFreshWater(boolean freshWater){
       this.freshWater = freshWater;
+      if(this.freshWater == true){
+          this.marine = false;
+      }else{
+          this.marine = true;
+      }
     }
     
     @Override

@@ -5,6 +5,8 @@
  */
 package animals;
 
+import java.util.Random;
+
 /**
  *
  * @author Marcos
@@ -13,9 +15,11 @@ package animals;
 public class Insect extends Animal{
 
     private boolean morphed;
+    
+    Random r = new Random();
 
     public Insect(){
-
+        this.setMorphed(r.nextBoolean());
     }
 
     public boolean isMorphed() {

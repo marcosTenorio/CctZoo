@@ -5,6 +5,9 @@
  */
 package animals;
 
+import java.util.Random;
+import setuphelper.StoredDataUtility;
+
 /**
  *
  * @author Marcos
@@ -15,9 +18,17 @@ public class Mammal extends Animal{
     private boolean fur;
     private boolean pregnancy;
     private String furColor;
+    
+    Random r = new Random();
+    
+    public StoredDataUtility sDU = new StoredDataUtility();
 
     public Mammal(){
-
+        this.setFur(r.nextBoolean());
+        this.setPregnancy(r.nextBoolean());
+        if(this.getFur() != false){
+            this.setFurColor(sDU.color[r.nextInt(sDU.color.length)]);
+        }
     }
 
     public boolean getFur() {

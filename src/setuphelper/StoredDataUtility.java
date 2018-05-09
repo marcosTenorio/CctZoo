@@ -64,7 +64,6 @@ public class StoredDataUtility {
     
     public String[] gender = new String[]{"Male", "Female"};
     
-
-    public String[] medication = new String[]{    
-    };
+    public String[] color = new String[] {"green", "black", "yellow", "white", "red", "gray", "blue", "pink"};
+    
 }

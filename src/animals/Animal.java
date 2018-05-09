@@ -27,7 +27,6 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String doa;
     private String gender;
     private boolean offspring;
-    //protected ArrayList<Medication> medication = new ArrayList<>();
     private boolean vaccine;
     private int exhibitNumber;
     private Keeper keeper;
