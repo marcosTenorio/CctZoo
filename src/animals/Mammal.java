@@ -13,20 +13,20 @@ import setuphelper.StoredDataUtility;
  * @author Marcos
  * @author Gabriel Oliveira
  */
-public class Mammal extends Animal{
-    
+public class Mammal extends Animal {
+
     private boolean fur;
     private boolean pregnancy;
     private String furColor;
-    
+
     Random r = new Random();
-    
+
     public StoredDataUtility sDU = new StoredDataUtility();
 
-    public Mammal(){
+    public Mammal() {
         this.setFur(r.nextBoolean());
         this.setPregnancy(r.nextBoolean());
-        if(this.getFur() != false){
+        if (this.getFur() != false) {
             this.setFurColor(sDU.color[r.nextInt(sDU.color.length)]);
         }
     }
@@ -54,13 +54,13 @@ public class Mammal extends Animal{
     public void setFurColor(String furColor) {
         this.furColor = furColor;
     }
-    
+
     @Override
-    public String getProperties(){
+    public String getProperties() {
         String output = " Has fur: " + this.fur + "\n";
         output += " Is pregnant: " + this.pregnancy + "\n";
         output += " Fur colour: " + this.furColor + "\n";
         return output;
     }
-    
+
 }

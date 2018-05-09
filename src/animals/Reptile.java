@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package animals;
 
 import java.util.Random;
@@ -13,15 +8,15 @@ import setuphelper.StoredDataUtility;
  * @author Marcos
  * @author Gabriel Oliveira
  */
-public class Reptile extends Animal{
-    
+public class Reptile extends Animal {
+
     private String habitat;
-    
+
     Random r = new Random();
-    
+
     public StoredDataUtility sDU = new StoredDataUtility();
 
-    public Reptile(){
+    public Reptile() {
         this.setHabitat(sDU.habitat[r.nextInt(sDU.habitat.length)]);
     }
 
@@ -32,9 +27,9 @@ public class Reptile extends Animal{
     public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
-    
+
     @Override
-    public String getProperties(){
+    public String getProperties() {
         String output = " Natural habitat: " + this.habitat + "\n";
         return output;
     }

@@ -1,6 +1,5 @@
 package animals;
 
-import health.Medication;
 import animals.interfaces.IAquatic;
 import animals.interfaces.IAvian;
 import animals.interfaces.IInsect;
@@ -32,7 +31,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private Keeper keeper;
     private SubType animalSubType;
     private ArrayList<Medication> medicationList;
-    
+
     public Animal() {
         animalId = ++lastanimalId;
         medicationList = new ArrayList<>();
@@ -113,18 +112,23 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setVaccine(boolean vaccine) {
         this.vaccine = vaccine;
     }
+
     public SubType getAnimalSubType() {
         return animalSubType;
     }
+
     public void setAnimalSubType(SubType animalSubType) {
         this.animalSubType = animalSubType;
     }
+
     public Keeper getKeeper() {
         return keeper;
     }
+
     public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
     }
+
     public String getType() {
         String type = this.getClass().getName();
         if (type.contains(".")) {
@@ -132,7 +136,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         }
         return type.toUpperCase();
     }
-    
+
     @Override
     public void fly() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -171,27 +175,23 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     public void setPetName(String petName) {
         this.petName = petName;
     }
-    
+
     @Override
     public String toString() {
         String output;
-        //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
         output = this.getName() + " | Type: " + this.getType();
-        //TODO + " | Subtype: " + subtype + " ----\n";
         output += "  Exhibit Number: " + this.getExhibitNumber() + "\n";
         output += "  Date of Birth: " + this.getDob() + " | Gender: " + this.gender + "\n";
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Offspring: " + this.offspring + "\n";
         output += "  Vaccined: " + this.vaccine + "\n";
-        
-        output += "  Medication:\n";
 
-        /**/
+        output += "  Medication:\n";
+        
         for (Medication medication : medicationList) {
             output += "    Date: " + medication.getDate() + "\n";
             output += "    Description: " + medication.getDescription() + "\n";
         }
-        /**/
         
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();

@@ -9,6 +9,7 @@ import setuphelper.SetUpDataUtility;
 /**
  *
  * @author Marcos
+ * @author Gabriel Oliveira
  */
 public class updateAnimal {
 
@@ -22,9 +23,7 @@ public class updateAnimal {
     private String gender;
     private boolean vaccine;
     private boolean offspring;
-    
-    
-    
+
     /**
      *
      * @param setData
@@ -135,7 +134,7 @@ public class updateAnimal {
             addAnimal(setData, printOut);
         }
     }
-    
+
     public void add() {
         System.out.print("Name: ");
         name = sc.next();
@@ -152,7 +151,7 @@ public class updateAnimal {
         System.out.print("Offspring(true/false)? ");
         offspring = sc.nextBoolean();
     }
-    
+
     /**
      *
      * @param setData
@@ -207,7 +206,7 @@ public class updateAnimal {
             searchAnimal(setData, printOut);
         }
     }
-    
+
     /**
      *
      * @param setData
@@ -229,7 +228,7 @@ public class updateAnimal {
             System.out.println();
         }
     }
-    
+
     /**
      *
      * @param setData
@@ -284,7 +283,7 @@ public class updateAnimal {
             updateAnimal(setData, printOut);
         }
     }
-    
+
     /**
      *
      * @param setData
@@ -336,7 +335,7 @@ public class updateAnimal {
             }
         }
     }
-    
+
     /**
      *
      * @param a
@@ -376,7 +375,8 @@ public class updateAnimal {
             System.out.println();
         }
     }
-     /**
+
+    /**
      *
      * @param a
      * @param setData
