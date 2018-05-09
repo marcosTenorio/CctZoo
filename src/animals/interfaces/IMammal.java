@@ -7,10 +7,10 @@ package animals.interfaces;
 
 /**
  *
- * @author marcos
+ * @author Marcos
+ * @author Gabriel Oliveira
  */
 public interface IMammal{
-    
-    
     public void breastFeed();
+    public void giveBirth();
 }
