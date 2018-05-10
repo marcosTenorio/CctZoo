@@ -33,15 +33,15 @@ public class Aquatic extends Animal{
 
     /**
      * Returns if Aquatic is freshwater
-     * @return A if Aquatic is freshwater or not
+     * @return A boolean whether the Aquatic is freshwater or not
      */
     public boolean getFreshWater(){
       return this.marine;
     }
 
     /**
-     *
-     * @param marine
+     * Sets if the Aquatic is marine or not
+     * @param marine A boolean to define if Aquatic is marine or not
      */
     public final void setMarine(boolean marine){
       this.marine = marine;
@@ -49,8 +49,8 @@ public class Aquatic extends Animal{
     }
 
     /**
-     *
-     * @param freshWater
+     * Sets if the Aquatic is freshwater or not 
+     * @param freshWater A boolean to define if Aquatic is freshWater or not
      */
     public final void setFreshWater(boolean freshWater){
       this.freshWater = freshWater;
@@ -58,8 +58,10 @@ public class Aquatic extends Animal{
     }
     
     /**
-     *
-     * @return
+     * Returns unique properties of class
+     * Method is invoked on superclass
+     * @return A String showing the values of marine and freshWater
+     * @see Animal#toString() 
      */
     @Override
     public String getProperties(){
