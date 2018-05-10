@@ -32,12 +32,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String dob;
     private String doa;
     private String gender;
+    //TODO: after being set to true, offsrping cant be changed to false
     private boolean offspring;
     private boolean vaccine;
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
     private ArrayList<Medication> medicationList;
+    //TODO: add variable to change state of swimming
     
     /**
      * Initializes a newly created Animal object so that it represents an empty Animal.
@@ -244,7 +246,13 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void fly() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void stopFlying() {
     }
 
     /**
@@ -260,6 +268,13 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void swim() {
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void stopSwimming() {
     }
 
     /**
@@ -308,6 +323,19 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     public void setPetName(String petName) {
         this.petName = petName;
+    }
+    
+    @Override
+    public void stopBreastFeeding() {
+        
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void checkAnimalType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**

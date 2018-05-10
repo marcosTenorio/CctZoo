@@ -21,12 +21,24 @@ public class SetUpDataUtility {
     int amtOfKeepers = 40; //amount of Keepers
     int amtOfAnimals = 100; //amount of Animals
 
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
 
+    /**
+     *
+     */
     public static ArrayList<Keeper> listOfKeepers = new ArrayList();
 
+    /**
+     *
+     */
     public static ArrayList<Animal> listOfAnimals = new ArrayList();
 
+    /**
+     *
+     */
     public static SubType[] animalSubtype = new SubType[]{SubType.AQUATIC,
         SubType.AVIAN, SubType.INSECT, SubType.MAMMAL, SubType.REPTILE};
 

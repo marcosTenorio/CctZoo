@@ -69,5 +69,5 @@ public class Aquatic extends Animal{
         output += " is fresh water: " + this.freshWater + "\n";
         return output;
     }
-
+    
 }

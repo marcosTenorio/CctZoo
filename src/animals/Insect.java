@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class Insect extends Animal{
 
+    //TODO: make variable final
     private boolean morphed;
     
     Random r = new Random();

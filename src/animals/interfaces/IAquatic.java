@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package animals.interfaces;
 
 /**
@@ -10,10 +5,20 @@ package animals.interfaces;
  * @author Marcos
  * @author Gabriel Oliveira
  */
-public interface IAquatic{
+public interface IAquatic extends ICheckType{
 
     /**
-     *
+     * This interface when implemented, gives the ability to an Animal to be a
+     * subtype of animal, becoming its first type, and an Aquatic as well
+     */
+    
+    /**
+     * Changes the variable swimming value to true
      */
     public void swim();
+    
+    /**
+     * Changes the variable swimming value to false
+     */
+    public void stopSwimming();
 }

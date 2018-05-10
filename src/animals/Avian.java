@@ -14,6 +14,9 @@ public class Avian extends Animal{
     
     Random r = new Random();
     
+    /**
+     *
+     */
     public StoredDataUtility sDU = new StoredDataUtility();
     
     /**
