@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package health;
+
+import animals.Animal;
 
 /**
  *
@@ -11,58 +8,66 @@ package health;
  * @author Gabriel Oliveira
  */
 public class Medication {
-    
+
     private String date;
     private String description;
-    
+
     /**
+     * This method is used to store the date and description of the animal
+     * medication Retrieve the date of the medication Retrieve description of
+     * the medication
      *
-     * @param date
-     * @param description
+     * @param date variable of type String
+     * @param description variable of type String
+     * @see Animal
      */
-    public Medication(String date, String description){
+    public Medication(String date, String description) {
         this.date = date;
         this.description = description;
     }
 
     /**
+     * Retrieve the date of the medication
      *
-     * @return
+     * @return a String data type
      */
     public String getDate() {
         return date;
     }
 
     /**
+     * Set the medication date
      *
-     * @param date
+     * @param date a variable of type String
      */
     public void setDate(String date) {
         this.date = date;
     }
 
     /**
+     * Retrieve the description of the medication
      *
-     * @return
+     * @return a String data type
      */
     public String getDescription() {
         return description;
     }
 
     /**
+     * Set the description of the medication
      *
-     * @param description
+     * @param description a variable of type String
      */
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String output = "";
         output += "-----------------------------" + "\n";
         output += "                 |Date: " + date + "\n";
-        output += "                 |Description: " + description+ "\n";
+        output += "                 |Description: " + description + "\n";
         output += "  ----------------------------------------";
         return output;
     }

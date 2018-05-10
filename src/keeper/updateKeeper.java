@@ -14,9 +14,13 @@ public class updateKeeper {
     Scanner sc = new Scanner(System.in);
     
     /**
-     *
-     * @param setData
-     * @param printOut
+     * method asks the user to inform name and 
+     * date of birth of the new Keeper and include 
+     * it to the keepers array list
+     * @param setData variable of type SetUpDataUtility
+     * @param printOut variable of type Printing
+     * @see SetUpDataUtility
+     * @see Printing
      */
     public void addKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
@@ -39,9 +43,12 @@ public class updateKeeper {
     }
     
     /**
-     *
-     * @param setData
-     * @param printOut
+     * method asks the user to choose a keeper to update,
+     * then asks for new data and update the chosen Keeper 
+     * @param setData variable of type SetUpDataUtility
+     * @param printOut variable of type Printing
+     * @see SetUpDataUtility
+     * @see Printing
      */
     public void updateKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
@@ -81,9 +88,12 @@ public class updateKeeper {
     }
     
     /**
-     *
-     * @param setData
-     * @param printOut
+     * method asks for the user to choose the Keeper from the
+     * list and displays all information about the chosen Keeper
+     * @param setData variable of type SetUpDataUtility
+     * @param printOut variable of type Printing
+     * @see SetUpDataUtility
+     * @see Printing
      */
     public void searchKeeper(SetUpDataUtility setData, Printing printOut) {
         System.out.println();
