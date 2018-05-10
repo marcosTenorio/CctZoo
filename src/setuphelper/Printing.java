@@ -14,7 +14,7 @@ public class Printing {
      * method displays the full list of Keepers, displaying only the number id
      * and names
      *
-     * @param setData variable of type SetUpDataUtility
+     * @param setData the SetUpDataUtility class
      * @see SetUpDataUtility
      */
     public void displayKeepers(SetUpDataUtility setData) {
@@ -30,8 +30,8 @@ public class Printing {
      * method displays the full list of Animals, displaying only the exhibit
      * number, name, pet name and responsible keeper
      *
-     * @param setData variable of type SetUpDataUtility
-     * @param type variable of type String
+     * @param setData the SetUpDataUtility class
+     * @param type the type of the animal
      * @see SetUpDataUtility
      */
     public void printAnimals(SetUpDataUtility setData, String type) {

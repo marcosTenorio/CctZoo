@@ -21,25 +21,12 @@ public class SetUpDataUtility {
     int amtOfKeepers = 40; //amount of Keepers
     int amtOfAnimals = 100; //amount of Animals
 
-    /**
-     *
-     * @see StoredDataUtility
-     */
     public StoredDataUtility sDU = new StoredDataUtility();
 
-    /**
-     * array list to store all the Keepers
-     */
     public static ArrayList<Keeper> listOfKeepers = new ArrayList();
 
-    /**
-     * array list to store all the animals
-     */
     public static ArrayList<Animal> listOfAnimals = new ArrayList();
 
-    /**
-     * list to store all the animals subtypes
-     */
     public static SubType[] animalSubtype = new SubType[]{SubType.AQUATIC,
         SubType.AVIAN, SubType.INSECT, SubType.MAMMAL, SubType.REPTILE};
 
@@ -90,7 +77,7 @@ public class SetUpDataUtility {
     }
 
     /**
-     * method fill random information about the Keepers created
+     * method fill random information about the created keepers
      *
      * @see StoredDataUtility
      */
@@ -112,7 +99,8 @@ public class SetUpDataUtility {
     }
 
     /**
-     * method fill random information about the animals created
+     * method fill random information about the created animals
+     *
      * @see StoredDataUtility
      */
     public void fillAnimals() {
@@ -132,8 +120,8 @@ public class SetUpDataUtility {
      * method check the keeper availability and permission, and connects the
      * animal to the keeper
      *
-     * @param animal a variable of type Animal
-     * @return a boolean data type
+     * @param animal the animal
+     * @return the keeper available or run the method again
      * @see Keeper
      */
     public Keeper getAvailableZookeeper(Animal animal) {
@@ -152,7 +140,6 @@ public class SetUpDataUtility {
     }
 
     /**
-     *
      * @return the full list of animals
      */
     public static ArrayList<Animal> getListOfAnimals() {

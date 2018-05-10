@@ -13,12 +13,11 @@ public class Medication {
     private String description;
 
     /**
-     * This method is used to store the date and description of the animal
-     * medication Retrieve the date of the medication Retrieve description of
-     * the medication
+     * Method to store the date and description of the animal
+     * medication 
      *
-     * @param date variable of type String
-     * @param description variable of type String
+     * @param date the date the medicine has been given to the animal
+     * @param description describes what procedures have been made
      * @see Animal
      */
     public Medication(String date, String description) {
@@ -27,36 +26,28 @@ public class Medication {
     }
 
     /**
-     * Retrieve the date of the medication
-     *
-     * @return a String data type
+     * @return the date the medicine has been given to the animal
      */
     public String getDate() {
         return date;
     }
 
     /**
-     * Set the medication date
-     *
-     * @param date a variable of type String
+     * @param date the date the medicine has been given to the animal
      */
     public void setDate(String date) {
         this.date = date;
     }
 
     /**
-     * Retrieve the description of the medication
-     *
-     * @return a String data type
+     * @return the description of what procedures have been made
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Set the description of the medication
-     *
-     * @param description a variable of type String
+     * @param description describes what procedures have been made
      */
     public void setDescription(String description) {
         this.description = description;
