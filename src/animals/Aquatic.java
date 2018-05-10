@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package animals;
 
 import java.util.Random;
@@ -12,6 +7,7 @@ import java.util.Random;
  * @author Marcos
  * @author Gabriel Oliveira
  */
+
 public class Aquatic extends Animal{
 
     private boolean marine;
@@ -20,24 +16,24 @@ public class Aquatic extends Animal{
     Random r = new Random();
 
     /**
-     *
+     * Initializes a newly created Aquatic object so that it represents an empty Animal.
      */
     public Aquatic(){
-        this.setMarine(r.nextBoolean());
-        this.setFreshWater(r.nextBoolean());
+        setMarine(r.nextBoolean());
+        setFreshWater(r.nextBoolean());
     }
 
     /**
-     *
-     * @return
+     * Returns if Aquatic is marine
+     * @return A if animal is marine or not
      */
     public boolean getMarine(){
       return this.marine;
     }
 
     /**
-     *
-     * @return
+     * Returns if Aquatic is freshwater
+     * @return A if Aquatic is freshwater or not
      */
     public boolean getFreshWater(){
       return this.marine;
@@ -47,26 +43,18 @@ public class Aquatic extends Animal{
      *
      * @param marine
      */
-    public void setMarine(boolean marine){
+    public final void setMarine(boolean marine){
       this.marine = marine;
-      if(this.marine == true){
-          this.freshWater = false;
-      }else{
-          this.freshWater = true;
-      }
+      this.freshWater = this.marine != true;
     }
 
     /**
      *
      * @param freshWater
      */
-    public void setFreshWater(boolean freshWater){
+    public final void setFreshWater(boolean freshWater){
       this.freshWater = freshWater;
-      if(this.freshWater == true){
-          this.marine = false;
-      }else{
-          this.marine = true;
-      }
+      this.marine = this.freshWater != true;
     }
     
     /**

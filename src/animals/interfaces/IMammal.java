@@ -11,6 +11,14 @@ package animals.interfaces;
  * @author Gabriel Oliveira
  */
 public interface IMammal{
+
+    /**
+     *
+     */
     public void breastFeed();
+
+    /**
+     *
+     */
     public void giveBirth();
 }

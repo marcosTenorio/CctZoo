@@ -11,5 +11,9 @@ package animals.interfaces;
  * @author Gabriel Oliveira
  */
 public interface IAquatic{
+
+    /**
+     *
+     */
     public void swim();
 }

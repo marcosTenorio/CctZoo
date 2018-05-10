@@ -8,6 +8,10 @@ import setuphelper.SetUpDataUtility;
  */
 public class CCTZoo {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         SetUpDataUtility setData = new SetUpDataUtility();
