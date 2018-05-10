@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import keeper.Keeper;
 import setuphelper.SetUpDataUtility;
 import health.Medication;
+import setuphelper.StoredDataUtility;
 
 /**
  *
@@ -115,119 +116,120 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
 
     /**
      * Returns the gender of the animal
-     * @return
+     * @return A String containing male | female
      */
     public String getGender() {
         return gender;
     }
 
     /**
-     *
-     * @param gender
+     * Sets the gender of the Animal
+     * @param gender A String containing either male or female
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
     /**
-     *
-     * @return
+     * Returns if animal has offspring
+     * @return A boolean defining if Animal has offspring or not
      */
     public boolean isOffspring() {
         return offspring;
     }
 
     /**
-     *
-     * @param offspring
+     * Sets the value of the offspring variable
+     * @param offspring A boolean to set the Animal offspring
      */
     public void setOffspring(boolean offspring) {
         this.offspring = offspring;
     }
 
     /**
-     *
-     * @return
+     * Returns the Animal exhibit number
+     * @return An integer containing the Animal exhibit number
      */
     public int getExhibitNumber() {
         return this.animalId;
     }
 
     /**
-     *
-     * @param exhibitNumber
-     */
-    public void setExhibitNumber(int exhibitNumber) {
-        this.exhibitNumber = exhibitNumber;
-    }
-
-    /**
-     *
-     * @return
+     * Returns an ArrayList with the Animal's medication
+     * @return An ArrayList of Medication with the Animal's medication
+     * @see Medication
      */
     public ArrayList<Medication> getMedication() {
         return medicationList;
     }
 
     /**
-     *
-     * @param medication
+     * Adds a new medication to the animal
+     * @param medication Object of class Medication
+     * @see Medication
      */
     public void setMedication(Medication medication) {
         this.medicationList.add(medication);
     }
 
     /**
-     *
-     * @return
+     * Return a boolean with the value of Animal's vaccine
+     * If animal has been vaccinated it returns true, if not, false
+     * @return A boolean with the value of vaccine
      */
     public boolean isVaccine() {
         return vaccine;
     }
 
     /**
-     *
-     * @param vaccine
+     * Sets the value of vaccine as boolean
+     * @param vaccine A boolean setting the value of vaccine
      */
     public void setVaccine(boolean vaccine) {
         this.vaccine = vaccine;
     }
 
     /**
-     *
-     * @return
+     * Returns the Subtype of the animal
+     * @return An object of the enum class SubType
+     * @see SubType
      */
     public SubType getAnimalSubType() {
         return animalSubType;
     }
 
     /**
-     *
-     * @param animalSubType
+     * Sets the value of the variable animalSubType
+     * @param animalSubType An enum object of the class SubType
+     * @see SubType
      */
     public void setAnimalSubType(SubType animalSubType) {
         this.animalSubType = animalSubType;
     }
 
     /**
-     *
-     * @return
+     * Returns the Keeper that looks after this actual Animal
+     * @return An object of the class Keeper
      */
     public Keeper getKeeper() {
         return keeper;
     }
 
     /**
-     *
-     * @param keeper
+     * Links a Keeper to the Animal
+     * @param keeper An Object of the Class Keeper
+     * @see Keeper
      */
     public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
     }
 
     /**
-     *
-     * @return
+     * Returns the runtime class of this Object
+     * Checks the class info of the instance and returns just the
+     * relevant part of it
+     * @return A String containing the Class name of the current object
+     * @see Object#getClass() 
      */
     public String getType() {
         String type = this.getClass().getName();
@@ -238,7 +240,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
     
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void fly() {
@@ -246,7 +248,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void breastFeed() {
@@ -254,14 +256,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void swim() {
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void layeggs() {
@@ -269,43 +271,48 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void metamorphose() {
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
     @Override
     public void giveBirth() {
     }
 
     /**
-     *
-     * @return
+     * Sets a method to be overridden by subclasses
+     * When overridden, method should return a String with unique properties
+     * of subclasses of the class Animal, this method will be used by the toString
+     * @return String containing the unique properties of subclass
      */
     public String getProperties() {
         return "";
     }
 
     /**
-     *
-     * @return
+     * Returns the Animal pet name
+     * @return String with a pet name
      */
     public String getPetName() {
         return petName;
     }
 
     /**
-     *
-     * @param petName
+     * Sets the value of the pet name
+     * @param petName A String containing the pet name
      */
     public void setPetName(String petName) {
         this.petName = petName;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         String output;
@@ -317,15 +324,12 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         output += "  Date of Arrival: " + this.doa + "\n";
         output += "  Offspring: " + this.offspring + "\n";
         output += "  Vaccined: " + this.vaccine + "\n";
-        
         output += "  Medication:\n";
-
-        /**/
+        
         for (Medication medication : medicationList) {
             output += "    Date: " + medication.getDate() + "\n";
             output += "    Description: " + medication.getDescription() + "\n";
         }
-        /**/
         
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
