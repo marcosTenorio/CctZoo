@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package animals;
 
 import java.util.Random;
@@ -20,36 +15,36 @@ public class Reptile extends Animal{
     Random r = new Random();
     
     /**
-     *
+     * Initializes a newly created Reptile object so that it represents an empty
+     * Animal.
+     * It sets a random value for the habitat
      */
-    public StoredDataUtility sDU = new StoredDataUtility();
-
-    /**
-     *
-     */
+    
     public Reptile(){
-        this.setHabitat(sDU.habitat[r.nextInt(sDU.habitat.length)]);
+        this.habitat = StoredDataUtility.habitat[r.nextInt(StoredDataUtility.habitat.length)];
     }
 
     /**
-     *
-     * @return
+     * Returns the habitat of the Reptile
+     * @return A String containing the Reptile's habitat
      */
     public String getHabitat() {
         return habitat;
     }
 
     /**
-     *
-     * @param habitat
+     * Sets the habitat where the Reptile lives in
+     * @param habitat The habitat to be set
      */
     public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
     
     /**
-     *
-     * @return
+     * Returns unique properties of class
+     * Method is invoked on superclass
+     * @return A String the reptile's habitat
+     * @see Animal#toString() 
      */
     @Override
     public String getProperties(){

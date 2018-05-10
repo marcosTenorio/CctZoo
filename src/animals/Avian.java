@@ -18,6 +18,7 @@ public class Avian extends Animal{
     
     /**
      * Initializes a newly created Avian object so that it represents an empty Animal.
+     * Sets a random boolean for feathered
      */
     public Avian(){
         setFeathered(r.nextBoolean());
@@ -27,16 +28,16 @@ public class Avian extends Animal{
     }
     
     /**
-     * Returns the colour of the animal's feathers
-     * @return A String with the colours of the feathers of the Avian
+     * Returns the color of the animal's feathers
+     * @return A String with the colors of the feathers of the Avian
      */
     public String getFeathersColor() {
         return feathersColor;
     }
 
     /**
-     * Sets the colours of the feathers
-     * @param feathersColor A String containing the colours of the feathers
+     * Sets the colors of the feathers
+     * @param feathersColor A String containing the colors of the feathers
      */
     public final void setFeathersColor(String feathersColor) {
         this.feathersColor = feathersColor;

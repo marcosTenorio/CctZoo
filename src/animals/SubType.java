@@ -13,27 +13,27 @@ package animals;
 public enum SubType {
 
     /**
-     *
+     * Constant for Aquatic Animals
      */
     AQUATIC,
 
     /**
-     *
+     * Constant for Avian Animals
      */
     AVIAN,
 
     /**
-     *
+     * Constant for Insect Animals
      */
     INSECT,
 
     /**
-     *
+     * Constant for Mammal Animals
      */
     MAMMAL,
 
     /**
-     *
+     * Constant for Reptile Animals
      */
     REPTILE;
 }

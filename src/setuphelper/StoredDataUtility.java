@@ -95,10 +95,10 @@ public class StoredDataUtility {
     /**
      * store fur and feathers colour, to be sorted
      */
-    public String[] color = new String[]{"green", "black", "yellow", "white", "red", "gray", "blue", "pink"};
+    public static final String[] color = new String[]{"green", "black", "yellow", "white", "red", "gray", "blue", "pink"};
 
     /**
      * store all reptile animals habitat, to be sorted
      */
-    public String[] habitat = new String[]{"swamp", "forest", "savanna", "desert", "mountains", "grassland", "coast"};
+    public static final String[] habitat = new String[]{"swamp", "forest", "savanna", "desert", "mountains", "grassland", "coast"};
 }

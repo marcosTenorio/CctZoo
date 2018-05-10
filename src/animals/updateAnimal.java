@@ -46,6 +46,7 @@ public class updateAnimal {
         try {
             switch (option) {
                 case 1:
+                    //TODO remove redundancy of the add method being called multiple times on the same scope
                     add();
                     Aquatic a = new Aquatic();
                     a.setName(name);
