@@ -22,7 +22,7 @@ public class Keeper extends Person {
     private final ArrayList<Animal> listOfAnimals;
 
     /**
-     * this method controls the max types and total animals each keeper is able
+     * method controls the maximum types and animals each keeper is able
      * to look after
      */
     public Keeper() {
@@ -31,12 +31,9 @@ public class Keeper extends Person {
     }
 
     /**
-     * Retrieve the first name of the Keeper, Retrieve the surname of the
-     * Keeper, Retrieve the date of birth of the Keeper
-     *
-     * @param firstName variable of type String
-     * @param surName variable of type String
-     * @param dob variable of type String
+     * @param firstName the keeper first name 
+     * @param surName the keeper surname
+     * @param dob the keeper date of birth
      */
     public Keeper(String firstName, String surName, String dob) {
         this.canLookAfter = new ArrayList<>();
@@ -47,9 +44,7 @@ public class Keeper extends Person {
     }
 
     /**
-     * Retrieve a specific animal and look for an available Keeper
-     *
-     * @param animal variable of type Animal
+     * @param animal the animal
      * @see Animal
      */
     public void addAnimal(Animal animal) {
@@ -61,20 +56,15 @@ public class Keeper extends Person {
     }
 
     /**
-     * method checks the availability of the keeper
-     *
-     * @return a variable of type boolean
+     * @return the result of keeper availability 
      */
     public boolean available() {
         return 10 >= listOfAnimals.size();
     }
 
     /**
-     * method checks Keeper allowance to look after a determined type and sub
-     * type of an animal
-     *
-     * @param animal variable of type Animal
-     * @return a variable of type boolean
+     * @param animal the animal
+     * @return the result of keeper and animal compatibility
      */
     public boolean checkAnimalCompatibility(Animal animal) {
         try {
@@ -89,19 +79,15 @@ public class Keeper extends Person {
     }
 
     /**
-     * Retrieve the Keeper full name
-     *
-     * @return a String data type
+     * @return the keeper name
      */
     public String getName() {
         return firstName + " " + surName;
     }
 
     /**
-     * Set the first and surname of the Keeper
-     *
-     * @param firstName a variable of type String
-     * @param surName a variable of type String
+     * @param firstName the keeper first name
+     * @param surName the keeper surname
      */
     public void setName(String firstName, String surName) {
         this.firstName = firstName;
@@ -109,65 +95,53 @@ public class Keeper extends Person {
     }
 
     /**
-     * Retrieve the keeper first name
-     *
-     * @return a String data type
+     * @return keeper first name
      */
     public String getFirstName() {
         return firstName;
     }
 
     /**
-     * Retrieve the surname of the Keeper
-     *
-     * @return a String data type
+     * @return keeper surname
      */
     public String getSurName() {
         return surName;
     }
 
     /**
-     * Set the first name of the Keeper
-     *
-     * @param firstName a variable of type String
+     * @param firstName the keeper first name
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     /**
-     * Set the surname of the Keeper
-     *
-     * @param surname a variable of type String
+     * @param surname the keeper surname
      */
     public void setSurName(String surname) {
         this.surName = surname;
     }
 
     /**
-     * Retrieve the date of birth of the Keeper
-     *
-     * @return a String data type
+     * @return keeper date of birth
      */
     public String getDob() {
         return dob;
     }
 
     /**
-     * Set the date of birth of the Keeper
-     *
-     * @param dob a variable of type String
+     * @param dob the keeper date of birth
      */
     public void setDob(String dob) {
         this.dob = dob;
     }
 
     /**
-     * method check if the keeper is allow to look after of determined animal
+     * method checks if the keeper is allow to look after of determined animal
      * sub type
      *
-     * @param type a variable of type SubType
-     * @return a boolean data type
+     * @param type the type of animal
+     * @return the result if the keeper can or can not look after the type of animal 
      * @seeSubType
      */
     private boolean isTypeOnList(SubType type) {
@@ -175,11 +149,10 @@ public class Keeper extends Person {
     }
 
     /**
-     * compare the sub type and keeper availability, if result is positive add
-     * the animal to the Keeper list
+     * compare the sub type and keeper availability, if result is positive,
+     * add the animal to the Keeper list
      *
-     * @param subType the sub types of animals(AQUACTIC, AVIAN, INSECT, MAMMAL,
-     * REPTILE)
+     * @param subType the sub types of animal
      * @see Aquatic
      * @see Avian
      * @see Insect

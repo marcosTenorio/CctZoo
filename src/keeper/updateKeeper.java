@@ -17,8 +17,8 @@ public class updateKeeper {
      * method asks the user to inform name and 
      * date of birth of the new Keeper and include 
      * it to the keepers array list
-     * @param setData variable of type SetUpDataUtility
-     * @param printOut variable of type Printing
+     * @param setData the SetUpDataUtility class
+     * @param printOut the Printing class
      * @see SetUpDataUtility
      * @see Printing
      */
@@ -45,8 +45,8 @@ public class updateKeeper {
     /**
      * method asks the user to choose a keeper to update,
      * then asks for new data and update the chosen Keeper 
-     * @param setData variable of type SetUpDataUtility
-     * @param printOut variable of type Printing
+     * @param setData the SetUpDataUtility class
+     * @param printOut the Printing class
      * @see SetUpDataUtility
      * @see Printing
      */
@@ -90,8 +90,8 @@ public class updateKeeper {
     /**
      * method asks for the user to choose the Keeper from the
      * list and displays all information about the chosen Keeper
-     * @param setData variable of type SetUpDataUtility
-     * @param printOut variable of type Printing
+     * @param setData the SetUpDataUtility class
+     * @param printOut the Printing class
      * @see SetUpDataUtility
      * @see Printing
      */
