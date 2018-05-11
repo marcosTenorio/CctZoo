@@ -32,15 +32,16 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     private String dob;
     private String doa;
     private String gender;
-    //TODO: after being set to true, offsrping cant be changed to false
     private boolean offspring;
     private boolean vaccine;
     private int exhibitNumber;
     private Keeper keeper;
     private SubType animalSubType;
     private ArrayList<Medication> medicationList;
-    //TODO: add variable to change state of swimming
-    
+    private boolean isSwimming;
+    private boolean isFlying;
+    private boolean isBreastFeeding;
+
     /**
      * Initializes a newly created Animal object so that it represents an empty Animal.
      */
@@ -145,7 +146,9 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      * @param offspring A boolean to set the Animal offspring
      */
     public void setOffspring(boolean offspring) {
-        this.offspring = offspring;
+        if(!this.offspring){
+          this.offspring = offspring;
+        }
     }
 
     /**
@@ -231,7 +234,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      * Checks the class info of the instance and returns just the
      * relevant part of it
      * @return A String containing the Class name of the current object
-     * @see Object#getClass() 
+     * @see Object#getClass()
      */
     public String getType() {
         String type = this.getClass().getName();
@@ -240,19 +243,25 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         }
         return type.toUpperCase();
     }
-    
+
     /**
      * {@inheritDoc}
      */
     @Override
     public void fly() {
+        if(checkAnimalType(this, SubType.AVIAN)){
+            isFlying = true;
+        }
     }
-    
+
     /**
      * {@inheritDoc}
      */
     @Override
     public void stopFlying() {
+        if(checkAnimalType(this, SubType.AVIAN)){
+            isFlying = false;
+        }
     }
 
     /**
@@ -260,7 +269,19 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void breastFeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(checkAnimalType(this, SubType.MAMMAL) && gender.toLowerCase().equals("male") && offspring == true){
+            isBreastFeeding = true;
+        }
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void stopBreastFeeding() {
+        if(checkAnimalType(this, SubType.MAMMAL) && gender.toLowerCase().equals("male") && offspring == true){
+            isBreastFeeding = false;
+        }
     }
 
     /**
@@ -268,13 +289,19 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void swim() {
+        if(checkAnimalType(this, SubType.AQUATIC)){
+            isSwimming = true;
+        }
     }
-    
+
     /**
      * {@inheritDoc}
      */
     @Override
     public void stopSwimming() {
+        if(checkAnimalType(this, SubType.AQUATIC)){
+            isSwimming = false;
+        }
     }
 
     /**
@@ -282,7 +309,9 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void layeggs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(checkAnimalType(this, SubType.REPTILE)){
+            offspring = true;
+        }
     }
 
     /**
@@ -290,6 +319,10 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
      */
     @Override
     public void metamorphose() {
+        if(checkAnimalType(this, SubType.INSECT)){
+            Animal insect = (Insect)this;
+            insect.setMorphed(true);
+        }
     }
 
     /**
@@ -325,19 +358,23 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         this.petName = petName;
     }
     
-    @Override
-    public void stopBreastFeeding() {
-        
-    }
-    
     /**
      * {@inheritDoc}
+     * @param animal
+     * @param expectedType
      */
     @Override
-    public void checkAnimalType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean checkAnimalType(Animal animal, SubType expectedType) {
+      //System.out.println("TYpe: " + type + " SubType: " + subtype);
+      String type = animal.getType();
+      String subType = animal.getAnimalSubType().toString();
+      boolean isCompatible = type.equals(expectedType.toString()) || subType.equals(expectedType.toString());
+      
+      System.out.println("Type: " + type + "  ||  " + subType + "  ||  " + expectedType.toString() + " isCompatible: " + isCompatible);
+      
+      return isCompatible;
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -353,12 +390,12 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
         output += "  Offspring: " + this.offspring + "\n";
         output += "  Vaccined: " + this.vaccine + "\n";
         output += "  Medication:\n";
-        
+
         for (Medication medication : medicationList) {
             output += "    Date: " + medication.getDate() + "\n";
             output += "    Description: " + medication.getDescription() + "\n";
         }
-        
+
         output += "  Zookeeper: " + this.keeper.getName() + "\n";
         output += this.getProperties();
         return output;

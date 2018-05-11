@@ -1,5 +1,6 @@
 package animals.interfaces;
-
+import animals.SubType;
+import animals.Animal;
 /**
  * @author Marcus
  * @author Gabriel Oliveira
@@ -12,6 +13,9 @@ public interface ICheckType {
      * or if it IS a subtype of the class
      * If an aquatic tries to fly, it has to have the interface IFly implemented and it
      * has to be the subtype of Avian
+     * @param type
+     * @param subtype
+     * @return 
      */
-    public void checkAnimalType();
+    public boolean checkAnimalType(Animal animal, SubType expectedType);
 }
