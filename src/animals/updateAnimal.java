@@ -44,10 +44,9 @@ public class updateAnimal {
         int option = sc.nextInt();
 
         try {
+            add();
             switch (option) {
                 case 1:
-                    //TODO remove redundancy of the add method being called multiple times on the same scope
-                    add();
                     Aquatic a = new Aquatic();
                     a.setName(name);
                     a.setPetName(pet);
@@ -57,13 +56,12 @@ public class updateAnimal {
                     a.setOffspring(offspring);
                     a.isVaccine();
                     a.isOffspring();
-                    setData.listOfAnimals.add(a);
+                    SetUpDataUtility.listOfAnimals.add(a);
                     a.setKeeper(setData.getAvailableZookeeper(a));
                     printOut.printAnimals(setData, "AQUATIC");
                     System.out.println("Animal added successfully!");
                     break;
                 case 2:
-                    add();
                     Avian av = new Avian();
                     av.setName(name);
                     av.setPetName(pet);
@@ -72,13 +70,12 @@ public class updateAnimal {
                     av.setGender(gender);
                     av.isVaccine();
                     av.isOffspring();
-                    setData.listOfAnimals.add(av);
+                    SetUpDataUtility.listOfAnimals.add(av);
                     av.setKeeper(setData.getAvailableZookeeper(av));
                     printOut.printAnimals(setData, "AVIAN");
                     System.out.println("Animal added successfully!");
                     break;
                 case 3:
-                    add();
                     Insect i = new Insect();
                     i.setName(name);
                     i.setPetName(pet);
@@ -87,13 +84,12 @@ public class updateAnimal {
                     i.setGender(gender);
                     i.isOffspring();
                     i.isVaccine();
-                    setData.listOfAnimals.add(i);
+                    SetUpDataUtility.listOfAnimals.add(i);
                     i.setKeeper(setData.getAvailableZookeeper(i));
                     printOut.printAnimals(setData, "INSECT");
                     System.out.println("Animal added successfully!");
                     break;
                 case 4:
-                    add();
                     Mammal m = new Mammal();
                     m.setName(name);
                     m.setPetName(pet);
@@ -102,13 +98,12 @@ public class updateAnimal {
                     m.setGender(gender);
                     m.isOffspring();
                     m.isVaccine();
-                    setData.listOfAnimals.add(m);
+                    SetUpDataUtility.listOfAnimals.add(m);
                     m.setKeeper(setData.getAvailableZookeeper(m));
                     printOut.printAnimals(setData, "MAMMAL");
                     System.out.println("Animal added successfully!");
                     break;
                 case 5:
-                    add();
                     Reptile r = new Reptile();
                     r.setName(name);
                     r.setPetName(pet);
@@ -117,7 +112,7 @@ public class updateAnimal {
                     r.setGender(gender);
                     r.isOffspring();
                     r.isVaccine();
-                    setData.listOfAnimals.add(r);
+                    SetUpDataUtility.listOfAnimals.add(r);
                     r.setKeeper(setData.getAvailableZookeeper(r));
                     printOut.printAnimals(setData, "REPTILE");
                     System.out.println("Animal added successfully!");

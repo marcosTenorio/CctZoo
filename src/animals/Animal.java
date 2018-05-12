@@ -320,7 +320,7 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     @Override
     public void metamorphose() {
         if(checkAnimalType(this, SubType.INSECT)){
-            Animal insect = (Insect)this;
+            Insect insect = (Insect)this;
             insect.setMorphed(true);
         }
     }
@@ -381,14 +381,14 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
     @Override
     public String toString() {
         String output;
-        //String subtype = getSubtype() == null ? "Undefined" : this.getSubtype().toString();
-        output = this.getName() + " | Type: " + this.getType();
-        //TODO + " | Subtype: " + subtype + " ----\n";
-        output += "  Exhibit Number: " + this.getExhibitNumber() + "\n";
-        output += "  Date of Birth: " + this.getDob() + " | Gender: " + this.gender + "\n";
-        output += "  Date of Arrival: " + this.doa + "\n";
-        output += "  Offspring: " + this.offspring + "\n";
-        output += "  Vaccined: " + this.vaccine + "\n";
+        String subtype = getAnimalSubType() == null ? "Undefined" : getAnimalSubType().toString();
+        output = getName() + " | Type: " + getType();
+        output += "  Subtype: " + subtype + "\n";
+        output += "  Exhibit Number: " + getExhibitNumber() + "\n";
+        output += "  Date of Birth: " + getDob() + " | Gender: " + gender + "\n";
+        output += "  Date of Arrival: " + doa + "\n";
+        output += "  Offspring: " + offspring + "\n";
+        output += "  Vaccined: " + vaccine + "\n";
         output += "  Medication:\n";
 
         for (Medication medication : medicationList) {
@@ -396,8 +396,8 @@ public abstract class Animal implements IAquatic, IAvian, IInsect, IMammal, IRep
             output += "    Description: " + medication.getDescription() + "\n";
         }
 
-        output += "  Zookeeper: " + this.keeper.getName() + "\n";
-        output += this.getProperties();
+        output += "  Zookeeper: " + keeper.getName() + "\n";
+        output += getProperties();
         return output;
     }
 }

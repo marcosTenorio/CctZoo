@@ -51,9 +51,11 @@ public class Mammal extends Animal {
      * Returns a boolean for the Mammal's pregnancy
      * @return
      */
-    //TODO: If gender == true then prgnancy = false
     public boolean getPregnancy() {
-        return pregnancy;
+        if(this.getGender().toLowerCase().equals("female")){
+            return pregnancy;
+        }
+        return false;
     }
 
     /**
@@ -61,8 +63,9 @@ public class Mammal extends Animal {
      * @param pregnancy
      */
     public void setPregnancy(boolean pregnancy) {
-        //TODO: if Mammal's gender == male; return
-        this.pregnancy = pregnancy;
+        if(this.getGender().toLowerCase().equals("female")){
+            this.pregnancy = pregnancy;
+        }
     }
 
     /**

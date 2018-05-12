@@ -8,8 +8,7 @@ import java.util.Random;
  * @author Gabriel Oliveira
  */
 public class Insect extends Animal{
-
-    //TODO: make variable final
+    
     private boolean morphed;
     
     Random r = new Random();
